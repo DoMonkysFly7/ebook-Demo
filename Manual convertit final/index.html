@@ -1,0 +1,1662 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<title>Manual Limba Romana</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    Fisierele de bootstrap tebuiesc downloadate mai de graba-->
+    <link rel="stylesheet" href="./CSS/style.css">
+<!--    Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="images/wz_jsgraphics.js"></script>
+    
+    <style type="text/css">
+
+        #pozaPag14, #pozaPag16 {
+            width: 800px;
+        }
+        .page-item-right {
+            margin-left: 100px;
+        }
+
+        .page-item-left {
+            margin-right: 100px;
+        }
+
+        .options-1, .options-2, .options-3, .options-4 {
+            cursor: pointer;
+        }
+
+        .selected-option-incorrect {
+            border: 2px solid red;
+            border-radius: 50%;
+            padding: 2px;
+        }
+
+        .selected-option-correct {
+            border: 2px solid green;
+            border-radius: 50%;
+            padding: 2px;
+        }
+
+        .accordion {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            z-index: 9999;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease-out;
+        }
+
+        .accordion.closed {
+            transform: translateX(-200px);
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 100%;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            z-index: 1;
+        }
+
+        .sidebar i {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 10px auto;
+        }
+
+        .fa {
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+        }
+
+        #modalPag14 .modal-dialog {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #modalPag14 .modal-content {
+            width: 80%;
+            height: 80%;
+            border: none;
+        }
+
+        .patratPozaPag14 {
+            width: 220px;
+            height: 220px;
+            /*Mai intai poti sa il faci rosu ca sa vezi unde il pui*/
+            /*background-color red;*/
+            /*iar dupa fa patratul transparent*/
+            background-color: rgba(0,0,0,0.0);
+        }
+
+        #ecran-completIconBtn:hover, #cuprinsIconBtn:hover,#helpIconBtn:hover {
+            cursor: pointer;
+        }
+
+        /*Am incercat ca atunci cand pui mouse-ul peste, sa schimbe sagetuta de la mouse in iconita din fisier, nu reusesc*/
+        .patratPozaPag14:hover, .patratPozaPag16:hover {
+            cursor: zoom-in;
+        }
+
+        .patratPozaPag16 {
+            width: 230px;
+            height: 180px;
+            background-color: rgba(0,0,0,0.0);
+        }
+
+        .scrisPag12 {
+            font-size: 11px;
+        }
+
+        .scrisPag12:focus {
+            font-size: 11px;
+        }
+
+        .scrisPag15 {
+            font-size: 11px;
+        }
+
+        .scrisPag15:focus {
+            font-size: 11px;
+        }
+
+        .modal {
+            z-index: 1050 !important;
+        }
+        .wrapper {
+            display: flex;
+            height: 100%;
+            margin: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+
+        /*Media queries*/
+        /* For iPhone SE */
+        @media only screen and (max-width: 378px) and (min-height: 666px) {
+            .one-two, .three-four, .five-six, .seven-eight, .nine-ten {
+                display: initial;
+            }
+
+            #pozaPag14, #pozaPag16 {
+                width: 300px !important;
+            }
+
+            #set-1, #set-2, #set-3, #set-4, #set-5 {
+                height: 30px;
+                padding-left: 320px;
+            }
+
+            .pagination {
+                background-color: red;
+                margin-top: 600px;
+                width: 3px;
+                height: 1px;
+            }
+
+            .page-link {
+                margin-top: 850px;
+            }
+
+            #ecran-completIconBtn {
+                display: none;
+            }
+        }
+
+        /*!* For iPhone 12 Pro *!*/
+        @media only screen and (min-width: 389px) and (max-width: 390px) and (max-height: 844px) {
+            .one-two, .three-four, .five-six, .seven-eight, .nine-ten {
+                display: initial;
+            }
+
+            #pozaPag14, #pozaPag16 {
+                width: 300px;
+            }
+
+            #set-1, #set-2, #set-3, #set-4, #set-5 {
+                height: 1px;
+                padding-left: 320px;
+            }
+
+            .pagination {
+                background-color: red;
+                margin-top: 600px;
+                width: 3px;
+                height: 1px;
+            }
+
+            .wrapper {
+                height: inherit;
+            }
+
+            .page-link {
+                margin-top: 850px;
+            }
+
+            #ecran-completIconBtn {
+                display: none;
+            }
+        }
+
+        /* For Samsung Galaxy S8+ */
+        @media only screen and (device-width: 360px) and (device-height: 740px) and (-webkit-device-pixel-ratio: 4) {
+            #set-1, #set-2, #set-3, #set-4, #set-5 {
+                padding-left: 340px;
+            }
+        }
+
+         /*For Samsung Galaxy S20 Ultra*/
+        @media only screen and (device-width: 412px) and (device-height: 915px) and (-webkit-device-pixel-ratio: 3.5) {
+            .one-two, .three-four, .five-six, .seven-eight, .nine-ten {
+                display: initial;
+            }
+
+            #pozaPag14, #pozaPag16 {
+                width: 300px;
+            }
+
+            #set-1, #set-2, #set-3, #set-4, #set-5 {
+                height: 1px;
+                padding-left: 320px;
+            }
+
+            .pagination {
+                background-color: red;
+                margin-top: 600px;
+                width: 3px;
+                height: 1px;
+            }
+
+            .wrapper {
+                height: inherit;
+            }
+
+            .page-link {
+                margin-top: 850px;
+            }
+
+            #ecran-completIconBtn {
+                display: none;
+            }
+        }
+
+        /* For all browsers */
+        @media only screen and (max-width: 1200px) {
+            .one-two, .three-four, .five-six, .seven-eight, .nine-ten {
+                display: initial;
+            }
+
+            #pozaPag14, #pozaPag16 {
+                width: 530px;
+            }
+
+            .wrapper {
+                height: inherit;
+            }
+        }
+
+
+
+        span.cls_003{font-family:Arial,serif;font-size:35.2px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Arial,serif;font-size:35.2px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_020{font-family:Arial,serif;font-size:22.1px;color:rgb(248,243,233);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_020{font-family:Arial,serif;font-size:22.1px;color:rgb(248,243,233);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_004{font-family:Arial,serif;font-size:7.7px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Arial,serif;font-size:7.7px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_005{font-family:Arial,serif;font-size:12.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_005{font-family:Arial,serif;font-size:12.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Arial,serif;font-size:11.0px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Arial,serif;font-size:11.0px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Arial,serif;font-size:11.0px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Arial,serif;font-size:11.0px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_009{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_010{font-family:"Calibri",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_010{font-family:"Calibri",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_011{font-family:"Calibri Italic",serif;font-size:12.1px;color:rgb(254,255,255);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_011{font-family:"Calibri Italic",serif;font-size:12.1px;color:rgb(254,255,255);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_012{font-family:"Calibri Italic",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_012{font-family:"Calibri Italic",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_013{font-family:Arial,serif;font-size:12.1px;color:rgb(240,87,54);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_013{font-family:Arial,serif;font-size:12.1px;color:rgb(240,87,54);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_021{font-family:Arial,serif;font-size:18.8px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_021{font-family:Arial,serif;font-size:18.8px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_014{font-family:Arial,serif;font-size:14.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_014{font-family:Arial,serif;font-size:14.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_015{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_015{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_016{font-family:Arial,serif;font-size:14.2px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_016{font-family:Arial,serif;font-size:14.2px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_019{font-family:"Calibri Bold Italic",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_019{font-family:"Calibri Bold Italic",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_017{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_017{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_018{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_018{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_022{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_022{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_002{font-family:Arial,serif;font-size:10.1px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_002{font-family:Arial,serif;font-size:10.1px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_023{font-family:Arial,serif;font-size:23.5px;color:rgb(248,243,233);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_023{font-family:Arial,serif;font-size:23.5px;color:rgb(248,243,233);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_024{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_024{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_025{font-family:Arial,serif;font-size:14.1px;color:rgb(0,168,89);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_025{font-family:Arial,serif;font-size:14.1px;color:rgb(0,168,89);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_026{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_026{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_027{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_027{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_030{font-family:"Calibri Bold",serif;font-size:12.0px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_030{font-family:"Calibri Bold",serif;font-size:12.0px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_029{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_029{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_031{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_031{font-family:Arial,serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_028{font-family:Arial,serif;font-size:12.1px;color:rgb(0,152,218);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_028{font-family:Arial,serif;font-size:12.1px;color:rgb(0,152,218);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_069{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_069{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_032{font-family:Arial,serif;font-size:14.0px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_032{font-family:Arial,serif;font-size:14.0px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_033{font-family:Arial,serif;font-size:12.1px;color:rgb(0,168,89);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_033{font-family:Arial,serif;font-size:12.1px;color:rgb(0,168,89);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_034{font-family:Arial,serif;font-size:12.1px;color:rgb(0,144,211);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_034{font-family:Arial,serif;font-size:12.1px;color:rgb(0,144,211);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_035{font-family:Arial,serif;font-size:12.1px;color:rgb(237,51,55);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_035{font-family:Arial,serif;font-size:12.1px;color:rgb(237,51,55);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_036{font-family:Arial,serif;font-size:14.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_036{font-family:Arial,serif;font-size:14.1px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_037{font-family:"Calibri Bold",serif;font-size:12.0px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_037{font-family:"Calibri Bold",serif;font-size:12.0px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_039{font-family:Arial,serif;font-size:12.1px;color:rgb(240,87,54);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_039{font-family:Arial,serif;font-size:12.1px;color:rgb(240,87,54);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_038{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_038{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_040{font-family:Arial,serif;font-size:14.0px;color:rgb(0,165,85);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_040{font-family:Arial,serif;font-size:14.0px;color:rgb(0,165,85);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_070{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: underline}
+div.cls_070{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_046{font-family:Arial,serif;font-size:12.1px;color:rgb(168,207,70);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_046{font-family:Arial,serif;font-size:12.1px;color:rgb(168,207,70);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_043{font-family:Arial,serif;font-size:12.0px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_043{font-family:Arial,serif;font-size:12.0px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_045{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_045{font-family:Arial,serif;font-size:12.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_047{font-family:Arial,serif;font-size:12.1px;color:rgb(236,39,143);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_047{font-family:Arial,serif;font-size:12.1px;color:rgb(236,39,143);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_048{font-family:Arial,serif;font-size:12.1px;color:rgb(0,175,239);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_048{font-family:Arial,serif;font-size:12.1px;color:rgb(0,175,239);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_050{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_050{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_051{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_051{font-family:Arial,serif;font-size:11.9px;color:rgb(0,152,218);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_052{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_052{font-family:Arial,serif;font-size:11.9px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_049{font-family:Arial,serif;font-size:11.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_049{font-family:Arial,serif;font-size:11.1px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_053{font-family:Arial,serif;font-size:23.5px;color:rgb(248,243,233);font-weight:bold;font-style:italic;text-decoration: none}
+div.cls_053{font-family:Arial,serif;font-size:23.5px;color:rgb(248,243,233);font-weight:bold;font-style:italic;text-decoration: none}
+span.cls_056{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_056{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_062{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_062{font-family:"Calibri Bold",serif;font-size:12.1px;color:rgb(254,255,255);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_063{font-family:"Calibri",serif;font-size:10.1px;color:rgb(72,136,123);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_063{font-family:"Calibri",serif;font-size:10.1px;color:rgb(72,136,123);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_058{font-family:Times,serif;font-size:11.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_058{font-family:Times,serif;font-size:11.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_064{font-family:"Calibri Bold",serif;font-size:10.1px;color:rgb(72,136,123);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_064{font-family:"Calibri Bold",serif;font-size:10.1px;color:rgb(72,136,123);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_059{font-family:"Calibri Italic",serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_059{font-family:"Calibri Italic",serif;font-size:10.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_065{font-family:"Calibri",serif;font-size:10.4px;color:rgb(240,87,54);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_065{font-family:"Calibri",serif;font-size:10.4px;color:rgb(240,87,54);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_066{font-family:"Calibri",serif;font-size:10.4px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_066{font-family:"Calibri",serif;font-size:10.4px;color:rgb(55,52,53);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_060{font-family:Arial,serif;font-size:9.1px;color:rgb(72,136,123);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_060{font-family:Arial,serif;font-size:9.1px;color:rgb(72,136,123);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_068{font-family:Arial,serif;font-size:11.6px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_068{font-family:Arial,serif;font-size:11.6px;color:rgb(55,52,53);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_061{font-family:"Calibri Italic",serif;font-size:9.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_061{font-family:"Calibri Italic",serif;font-size:9.1px;color:rgb(55,52,53);font-weight:normal;font-style:italic;text-decoration: none}
+-->
+</style>
+</head>
+
+<body>
+<main id="fullscreen-demo">
+
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sidebar col-md-2" style="padding-top: 200px;">
+                  <span id="ecran-completIconBtn" onclick="toggleFullScreen()" title="Full Screen Mode">
+                    <i style="background-image: url('CSS/ecran-completIcon.png');"></i>
+                  </span>
+                  <span id="helpIconBtn" type="button" data-bs-toggle="modal" data-bs-target="#modalAjutor">
+                    <i style="background-image: url('CSS/helpIcon.png');" title="Ajutor/Help"></i>
+                  </span>
+                  <span id="show-accordion-btn" onclick="toggleAccordion()" style="cursor: pointer;">
+                    <i style="background-image: url('CSS/cuprinsIcon.png');" title="Cuprins"></i>
+                  </span>
+                </div>
+            </div>
+        </div>
+
+
+<div id="set-1">
+<section class="one-two">
+<section class="page-one">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-01.jpg" width=581 height=737></div>
+<div style="position:absolute;left:513.50px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:295.73px;top:30.56px" class="cls_020"><span class="cls_020">Din nou la școală</span></div>
+<div style="position:absolute;left:510.20px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:505.80px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:37.66px;top:108.67px" class="cls_005"><span class="cls_005">1. Spune </span><span class="cls_006">la ce te gândești dacă auzi  cuvântul</span></div>
+<div style="position:absolute;left:37.19px;top:140.58px" class="cls_005"><span class="cls_005">2. Citește </span><span class="cls_006">interviul următor
+
+    <!-- Button trigger modal -->
+<a style="background: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0.0);" type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPag11">
+</a></span></div>
+
+<div style="position:absolute;left:37.50px;top:161.25px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.26px;top:160.84px" class="cls_008"><span class="cls_008">În septembrie se întorc acasă cei care au plecat la mare pentru</span></div>
+<div style="position:absolute;left:102.26px;top:171.33px" class="cls_008"><span class="cls_008">apă şi soare, sau la munte pentru răcoare. Tot în septembrie</span></div>
+<div style="position:absolute;left:102.26px;top:181.82px" class="cls_008"><span class="cls_008">începem bucuroşi școala. Permite-mi să-ți pun câteva întrebări.</span></div>
+<div style="position:absolute;left:102.25px;top:192.32px" class="cls_008"><span class="cls_008">Te bucuri că începe școala?</span></div>
+<div style="position:absolute;left:37.50px;top:203.77px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.25px;top:205.43px" class="cls_008"><span class="cls_008">Da, chiar aștept să se înceapă școala</span></div>
+<div style="position:absolute;left:37.50px;top:218.39px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.25px;top:218.55px" class="cls_008"><span class="cls_008">De ce aștepți?</span></div>
+<div style="position:absolute;left:37.50px;top:232.07px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.25px;top:231.66px" class="cls_008"><span class="cls_008">Abia aștept să-mi revăd colegii de clasă, prietenele mele.</span></div>
+<div style="position:absolute;left:37.50px;top:243.87px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.25px;top:244.78px" class="cls_008"><span class="cls_008">Ești pregătită cu rechizitele necesare?</span></div>
+<div style="position:absolute;left:37.50px;top:258.49px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.25px;top:257.89px" class="cls_008"><span class="cls_008">Am cumpărat împreună cu mama un ghiozdan nou,</span></div>
+<div style="position:absolute;left:102.25px;top:271.01px" class="cls_008"><span class="cls_008">caiete, coperți, penar cu creioane, pix și stilou.</span></div>
+<div style="position:absolute;left:37.50px;top:284.95px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.25px;top:284.12px" class="cls_008"><span class="cls_008">Oare vei mai avea timp să te joci cu păpușile tale?</span></div>
+<div style="position:absolute;left:37.50px;top:296.75px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.25px;top:297.24px" class="cls_008"><span class="cls_008">Desigur, după ce rezolv temele cu atenție.</span></div>
+<div style="position:absolute;left:37.50px;top:309.25px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.24px;top:310.35px" class="cls_008"><span class="cls_008">Faci și ceva sport?</span></div>
+<div style="position:absolute;left:37.50px;top:324.07px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.24px;top:323.47px" class="cls_008"><span class="cls_008">Firește, pentru că știu zicala: ,,Minte sănătoasă într-un corp</span></div>
+<div style="position:absolute;left:102.24px;top:333.96px" class="cls_008"><span class="cls_008">sănătos.”</span></div>
+<div style="position:absolute;left:37.50px;top:348.06px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.24px;top:347.07px" class="cls_008"><span class="cls_008">Pe lângă școală și sport mai ai vreun hobby?</span></div>
+<div style="position:absolute;left:37.50px;top:360.55px" class="cls_007"><span class="cls_007">Maria:</span></div>
+<div style="position:absolute;left:102.24px;top:360.19px" class="cls_008"><span class="cls_008">În timpul meu liber îmi place să pictez și să ascult muzică.</span></div>
+<div style="position:absolute;left:37.50px;top:372.41px" class="cls_007"><span class="cls_007">Reporter:</span></div>
+<div style="position:absolute;left:102.24px;top:373.30px" class="cls_008"><span class="cls_008">Îți doresc să ai în acest an școlar sănătate și spor la învățătură. Mult succes în noul an școlar!</span></div>
+<div style="position:absolute;left:37.14px;top:403.70px" class="cls_009"><span class="cls_009">3. Muncă în perechi</span><span class="cls_010">   Realizați un interviu asemănător, cu un coleg/colegă, cu ajutorul întrebărilor de mai</span></div>
+<div style="position:absolute;left:146.14px;top:416.43px" class="cls_010"><span class="cls_010">jos, apoi schimbați rolurile</span></div>
+<div style="position:absolute;left:146.20px;top:434.48px" class="cls_011"><span class="cls_011">Cum te simți în prima zi de școală?</span></div>
+<div style="position:absolute;left:358.39px;top:433.73px" class="cls_012"><span class="cls_012">Care sunt orele tale preferate?</span></div>
+<div style="position:absolute;left:146.20px;top:454.05px" class="cls_012"><span class="cls_012">Ai așteptat începerea școlii?</span></div>
+<div style="position:absolute;left:358.39px;top:453.30px" class="cls_011"><span class="cls_011">Ce planuri ai pentru acest an școlar?</span></div>
+<div style="position:absolute;left:37.14px;top:481.73px" class="cls_005"><span class="cls_005">4. Arată și enumeră </span><span class="cls_006">rechizitele tale.</span></div>
+<div style="position:absolute;left:37.14px;top:502.69px" class="cls_005"><span class="cls_005">5. Spune/scrie</span><span class="cls_013"> </span><span class="cls_006">formula prin care ceri:  a) o carte de la un coleg,</span></div>
+<div style="position:absolute;left:244.39px;top:515.12px" class="cls_006"><span class="cls_006">b) un caiet  de la vânzătoare la librărie,</span></div>
+<div style="position:absolute;left:244.39px;top:527.56px" class="cls_006"><span class="cls_006">c) permisiunea de la mama ca să mergi la joacă.</span></div>
+<div style="position:absolute;left:37.14px;top:554.36px" class="cls_005"><span class="cls_005">6. Citește biletul </span><span class="cls_006">de mai jos și observă părțile acestuia</span></div>
+<div style="position:absolute;left:485.40px;top:566.56px" class="cls_021"><span class="cls_021">Reține!</span></div>
+<div style="position:absolute;left:47.41px;top:577.38px" class="cls_014"><span class="cls_014">Draga mamă,</span></div>
+<div style="position:absolute;left:302.22px;top:578.11px" class="cls_013"><span class="cls_013">Formulă de adresare</span></div>
+<div style="position:absolute;left:302.22px;top:592.61px" class="cls_015"><span class="cls_015">(aflăm cui se scrie biletul)</span></div>
+<div style="position:absolute;left:47.59px;top:600.40px" class="cls_016"><span class="cls_016">Am plecat la antrenament </span><span class="cls_014">de fotbal.</span></div>
+<div style="position:absolute;left:302.22px;top:609.86px" class="cls_013"><span class="cls_013">Conținutul biletului</span></div>
+<div style="position:absolute;left:476.94px;top:608.29px" class="cls_019"><span class="cls_019">Biletul</span></div>
+<div style="position:absolute;left:47.59px;top:611.30px" class="cls_014"><span class="cls_014">Revin la ora 17.</span></div>
+<div style="position:absolute;left:302.22px;top:624.36px" class="cls_015"><span class="cls_015">(informează)</span></div>
+<div style="position:absolute;left:449.21px;top:620.94px" class="cls_010"><span class="cls_010">este un text scurt,</span></div>
+<div style="position:absolute;left:181.71px;top:625.67px" class="cls_014"><span class="cls_014">Te pup,</span></div>
+<div style="position:absolute;left:446.66px;top:633.58px" class="cls_010"><span class="cls_010">prin care anunțăm,</span></div>
+<div style="position:absolute;left:181.73px;top:641.61px" class="cls_014"><span class="cls_014">fiul tău, Mircea.</span></div>
+<div style="position:absolute;left:302.22px;top:645.36px" class="cls_013"><span class="cls_013">Formula de încheiere</span></div>
+<div style="position:absolute;left:455.49px;top:646.23px" class="cls_010"><span class="cls_010">cerem ceva sau</span></div>
+<div style="position:absolute;left:302.22px;top:659.86px" class="cls_015"><span class="cls_015">(aflăm cine scrie biletul)</span></div>
+<div style="position:absolute;left:435.72px;top:658.87px" class="cls_010"><span class="cls_010">mulțumim pentru ceva.</span></div>
+<div style="position:absolute;left:37.14px;top:681.22px" class="cls_017"><span class="cls_017">6. Realizează un bilet, </span><span class="cls_018">adresat unui prieten, prin care:</span></div>
+<div style="position:absolute;left:37.09px;top:697.97px" class="cls_022"><span class="cls_022">a) îl chemi la joacă,</span></div>
+<div style="position:absolute;left:165.42px;top:697.97px" class="cls_022"><span class="cls_022">b) îi ceri o carte,</span></div>
+<div style="position:absolute;left:273.42px;top:697.97px" class="cls_022"><span class="cls_022">c) îi mulțumești pentru  o jucărie.</span></div>
+<div style="position:absolute;left:549.84px;top:706.52px" class="cls_002"><span class="cls_002">11</span></div>
+</div>
+</section>
+
+<section class="page-two">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-02.jpg" width=581 height=737></div>
+<div style="position:absolute;left:40.43px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Primul clopoţel</span></div>
+<div style="position:absolute;left:37.13px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:32.73px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:44.45px;top:96.63px" class="cls_005"><span class="cls_005">1. Ascultați cântecul </span><span class="cls_024">Cling, cling, sună clopoțelul. </span><span class="cls_006">(text în Anexă)</span></div>
+<div style="position:absolute;left:44.45px;top:123.42px" class="cls_005"><span class="cls_005">2. Citiți </span><span class="cls_006">poezia!</span></div>
+<div style="position:absolute;left:118.77px;top:146.40px" class="cls_025"><span class="cls_025">Primul clopoțel</span></div>
+<div style="position:absolute;left:142.52px;top:163.40px" class="cls_026"><span class="cls_026">(fragment)</span></div>
+<div style="position:absolute;left:164.53px;top:178.00px" class="cls_027"><span class="cls_027">de Simona Epure</span></div>
+<div style="position:absolute;left:85.33px;top:195.81px" class="cls_006"><span class="cls_006">Clopoţelul sună iară,</span></div>
+<div style="position:absolute;left:85.33px;top:208.78px" class="cls_006"><span class="cls_006">După-ndelungata vară,</span></div>
+<div style="position:absolute;left:85.32px;top:221.74px" class="cls_006"><span class="cls_006">Pe copii la şcoala-i cheamă.</span></div>
+<div style="position:absolute;left:85.32px;top:234.70px" class="cls_006"><span class="cls_006">Haideţi, nu vă fie teamă!</span></div>
+<div style="position:absolute;left:85.31px;top:260.62px" class="cls_006"><span class="cls_006">Azi, vacanţa s-asfârşit,</span></div>
+<div style="position:absolute;left:85.31px;top:273.58px" class="cls_006"><span class="cls_006">Vă urează „Bun venit!“</span></div>
+<div style="position:absolute;left:85.30px;top:286.54px" class="cls_006"><span class="cls_006">Doamna voastră învăţătoare,</span></div>
+<div style="position:absolute;left:85.29px;top:299.50px" class="cls_006"><span class="cls_006">Ca o mamă iubitoare.</span></div>
+<div style="position:absolute;left:85.29px;top:325.43px" class="cls_006"><span class="cls_006">Ea, pe toţi, o să vă-nveţe,</span></div>
+<div style="position:absolute;left:85.29px;top:338.39px" class="cls_006"><span class="cls_006">Lucruri bune şi măreţe,</span></div>
+<div style="position:absolute;left:85.28px;top:351.35px" class="cls_006"><span class="cls_006">Să scrieţi şi să citiţi,</span></div>
+<div style="position:absolute;left:85.28px;top:364.31px" class="cls_006"><span class="cls_006">Repede să socotiţi.</span></div>
+<div style="position:absolute;left:308.51px;top:383.44px" class="cls_030"><span class="cls_030">Cuvinte și expresii:</span></div>
+<div style="position:absolute;left:85.27px;top:390.23px" class="cls_006"><span class="cls_006">Să vedeţi, nu va fi greu</span></div>
+<div style="position:absolute;left:85.27px;top:403.19px" class="cls_006"><span class="cls_006">Dacă veţi munci mereu,</span></div>
+<div style="position:absolute;left:285.91px;top:409.82px" class="cls_029"><span class="cls_029">mărețe</span><span class="cls_031"> </span><span class="cls_015">- </span><span class="cls_031">aici: </span><span class="cls_015">importante</span></div>
+<div style="position:absolute;left:426.30px;top:412.39px" class="cls_029"><span class="cls_029">urează </span><span class="cls_015">- dorește</span></div>
+<div style="position:absolute;left:85.26px;top:416.16px" class="cls_006"><span class="cls_006">Totul va părea uşor</span></div>
+<div style="position:absolute;left:285.91px;top:421.82px" class="cls_029"><span class="cls_029">îndelungată </span><span class="cls_015">- lungă</span></div>
+<div style="position:absolute;left:426.30px;top:424.39px" class="cls_029"><span class="cls_029">Bun venit! </span><span class="cls_015">- Bine ați venit!</span></div>
+<div style="position:absolute;left:85.26px;top:429.12px" class="cls_006"><span class="cls_006">Când veţi învăţa cu spor!</span></div>
+<div style="position:absolute;left:285.91px;top:433.82px" class="cls_029"><span class="cls_029">spor </span><span class="cls_015">- </span><span class="cls_031">aici: </span><span class="cls_015">rezultate, succes</span></div>
+<div style="position:absolute;left:44.45px;top:474.92px" class="cls_009"><span class="cls_009">3. Exprimă-ți părerea </span><span class="cls_010">despre poezie:</span></div>
+<div style="position:absolute;left:44.45px;top:489.57px" class="cls_010"><span class="cls_010">ridică semnul</span></div>
+<div style="position:absolute;left:136.61px;top:489.57px" class="cls_010"><span class="cls_010">dacă ți-a plăcut, sau semnul</span></div>
+<div style="position:absolute;left:296.40px;top:489.57px" class="cls_010"><span class="cls_010">dacă nu ți-a plăcut.</span></div>
+<div style="position:absolute;left:44.13px;top:526.95px" class="cls_005"><span class="cls_005">4. Completează</span><span class="cls_028"> </span><span class="cls_006">propozițiile și </span><span class="cls_005">transcrie</span><span class="cls_006">-le.</span></div>
+<div style="position:absolute;left:308.98px;top:526.95px" class="cls_005"><span class="cls_005">5. Înlocuiește</span><span class="cls_028"> </span><span class="cls_006">cuvintele subliniate cu altele care</span></div>
+<div style="position:absolute;left:308.97px;top:541.35px" class="cls_006"><span class="cls_006">au sens asemănător:</span></div>
+<div style="position:absolute;left:56.40px;top:546.15px" class="cls_006"><span class="cls_006">Sună</span></div>
+<!--    text input exercitiu-->
+
+    <div style="position:absolute;left:90.40px;top:547.5px"><input class="scrisPag12" style="width:78px; height:15px;" type="text"></div>
+
+<div style="position:absolute;left:184.46px;top:546.15px" class="cls_006"><span class="cls_006">școlii.</span></div>
+<div style="position:absolute;left:308.97px;top:562.95px" class="cls_006"><span class="cls_006">Vacanța s-a </span><span class="cls_069">sfârșit</span><span class="cls_006">. După o vară </span><span class="cls_069">îndelungată</span></div>
+<div style="position:absolute;left:56.40px;top:571.29px" class="cls_006"><span class="cls_006">Îi așteaptă</span></div>
+
+    <div style="position:absolute;left:119.40px;top:569.5px"><input class="scrisPag12" style="width:78px; height:15px;" type="text"></div>
+
+
+    <div style="position:absolute;left:308.97px;top:577.35px" class="cls_006"><span class="cls_006">elevii merg la școală. Doamna învățătoare le</span></div>
+<div style="position:absolute;left:308.97px;top:591.75px" class="cls_069"><span class="cls_069">urează</span><span class="cls_006"> ,,Bun venit!”. Ei vor învăța cu </span><span class="cls_069">spor</span><span class="cls_006">.</span></div>
+<div style="position:absolute;left:56.40px;top:597.82px" class="cls_006"><span class="cls_006">Ei vor învăța cu</span></div>
+
+    <div style="position:absolute;left:143.40px;top:597.5px"><input class="scrisPag12" style="width:78px; height:15px;" type="text"></div>
+
+    <div style="position:absolute;left:56.40px;top:627.87px" class="cls_006"><span class="cls_006">Copiii merg la</span></div>
+
+    <div style="position:absolute;left:136.40px;top:627.87px"><input class="scrisPag12" style="width:78px; height:15px;" type="text"></div>
+
+    <div style="position:absolute;left:308.98px;top:632.58px" class="cls_005"><span class="cls_005">6. Discutați</span><span class="cls_028"> </span><span class="cls_006">care este cheia succesului școlar</span></div>
+<div style="position:absolute;left:308.98px;top:646.99px" class="cls_006"><span class="cls_006">(cum puteți ajunge la rezultatele dorite).</span></div>
+<div style="position:absolute;left:54.40px;top:651.21px" class="cls_006"><span class="cls_006">Elevii vor învăța lucruri</span></div>
+
+    <div style="position:absolute;left:178.40px;top:649.27px"><input class="scrisPag12" style="width:78px; height:15px;" type="text"></div>
+
+<div style="position:absolute;left:20.31px;top:706.52px" class="cls_002"><span class="cls_002">12</span></div>
+</div>
+</section>
+</section>
+</div>
+
+<div id="set-2">
+<section class="three-four" >
+<section class="page-three">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-03.jpg" width=581 height=737></div>
+<div style="position:absolute;left:513.50px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:295.73px;top:30.56px" class="cls_020"><span class="cls_020">Din nou la școală</span></div>
+<div style="position:absolute;left:510.20px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:505.80px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:33.28px;top:96.63px" class="cls_005"><span class="cls_005">7. Leagă </span><span class="cls_006">formele de salut de desenele potrivite.</span></div>
+<div style="position:absolute;left:35.48px;top:126.48px" class="cls_006"><span class="cls_006">a)</span></div>
+<div style="position:absolute;left:331.52px;top:126.42px" class="cls_006"><span class="cls_006">c)</span></div>
+<div style="position:absolute;left:195.32px;top:142.39px" class="cls_032"><span class="cls_032">Bună ziua!</span></div>
+<div style="position:absolute;left:242.35px;top:191.70px" class="cls_032"><span class="cls_032">Salut!</span></div>
+<div style="position:absolute;left:241.69px;top:242.51px" class="cls_032"><span class="cls_032">Bine ați venit!</span></div>
+<div style="position:absolute;left:377.80px;top:244.48px" class="cls_006"><span class="cls_006">d)</span></div>
+<div style="position:absolute;left:70.11px;top:265.26px" class="cls_006"><span class="cls_006">b)</span></div>
+<div style="position:absolute;left:261.91px;top:292.57px" class="cls_032"><span class="cls_032">Călătorie plăcută!</span></div>
+<div style="position:absolute;left:309.88px;top:389.93px" class="cls_005"><span class="cls_005">11. Observă </span><span class="cls_006">greșelile și </span><span class="cls_005">copiază</span><span class="cls_028"> </span><span class="cls_006">corect</span></div>
+<div style="position:absolute;left:33.28px;top:392.47px" class="cls_005"><span class="cls_005">8. Povestește </span><span class="cls_006">despre prima zi de școală cu</span></div>
+<div style="position:absolute;left:309.88px;top:401.21px" class="cls_006"><span class="cls_006">textul următor:</span></div>
+<div style="position:absolute;left:33.28px;top:406.87px" class="cls_006"><span class="cls_006">ajutorul următoarelor întrebări.</span></div>
+<div style="position:absolute;left:343.02px;top:421.55px" class="cls_006"><span class="cls_006">ce bine că a început noul an școlar</span></div>
+<div style="position:absolute;left:45.11px;top:427.23px" class="cls_006"><span class="cls_006">Cu cine ai venit la școală?</span></div>
+<div style="position:absolute;left:45.11px;top:444.55px" class="cls_006"><span class="cls_006">Cu cine te-ai întâlnit în curtea școlii?</span></div>
+<div style="position:absolute;left:330.46px;top:445.94px" class="cls_006"><span class="cls_006">aștept cu nerăbdare să învăț lucruri noi</span></div>
+<div style="position:absolute;left:45.11px;top:461.87px" class="cls_006"><span class="cls_006">Ce ți-a plăcut cel mai mult?</span></div>
+<div style="position:absolute;left:321.08px;top:468.69px" class="cls_006"><span class="cls_006">mi-am pregătit din timp rechizitele școlare</span></div>
+<div style="position:absolute;left:351.01px;top:491.44px" class="cls_006"><span class="cls_006">ai așteptat începerea școlii și tu</span></div>
+<div style="position:absolute;left:33.28px;top:496.87px" class="cls_005"><span class="cls_005">9. Observă</span><span class="cls_028"> </span><span class="cls_006">semnele de punctuaţie de la</span></div>
+<div style="position:absolute;left:33.28px;top:510.99px" class="cls_006"><span class="cls_006">sfârșitul propozițiilor.</span></div>
+<div style="position:absolute;left:343.40px;top:515.05px" class="cls_006"><span class="cls_006">îți doresc succes în noul an școlar</span></div>
+<div style="position:absolute;left:45.11px;top:528.54px" class="cls_006"><span class="cls_006">Unde merg elevii</span><span class="cls_033">?</span></div>
+<div style="position:absolute;left:45.11px;top:542.94px" class="cls_006"><span class="cls_006">Elevii merg la școală</span><span class="cls_034">.</span></div>
+<div style="position:absolute;left:45.11px;top:557.34px" class="cls_006"><span class="cls_006">Bine ați venit la școală</span><span class="cls_035">!</span></div>
+<div style="position:absolute;left:316.79px;top:559.25px" class="cls_036"><span class="cls_036">Să ne reamintim!</span></div>
+<div style="position:absolute;left:317.19px;top:580.65px" class="cls_006"><span class="cls_006">* Primul cuvânt din</span></div>
+<div style="position:absolute;left:33.28px;top:595.20px" class="cls_005"><span class="cls_005">10. Transcrie</span><span class="cls_028"> </span><span class="cls_006">propozițiile completate cu</span></div>
+<div style="position:absolute;left:317.19px;top:596.49px" class="cls_006"><span class="cls_006">propoziție se scrie</span></div>
+<div style="position:absolute;left:33.28px;top:610.27px" class="cls_006"><span class="cls_006">semnele potrivite.</span></div>
+<div style="position:absolute;left:317.19px;top:612.33px" class="cls_006"><span class="cls_006">întotdeauna cu literă mare.</span></div>
+<div style="position:absolute;left:44.39px;top:630.65px" class="cls_006"><span class="cls_006">În luna septembrie începe școala</span></div>
+<div style="position:absolute;left:44.39px;top:650.81px" class="cls_006"><span class="cls_006">Unde se întâlnesc elevii</span></div>
+<div style="position:absolute;left:317.47px;top:648.40px" class="cls_006"><span class="cls_006">* La sfârșitul propoziției se pune </span><span class="cls_005">punct (.)</span><span class="cls_006">,</span></div>
+<div style="position:absolute;left:317.47px;top:666.36px" class="cls_033"><span class="cls_033">semnul întrebării (?)</span></div>
+<div style="position:absolute;left:44.39px;top:670.97px" class="cls_006"><span class="cls_006">Spor la învățătură</span></div>
+<div style="position:absolute;left:317.47px;top:684.32px" class="cls_006"><span class="cls_006">sau </span><span class="cls_035">semnul exclamării (!)</span><span class="cls_006">.</span></div>
+<div style="position:absolute;left:549.84px;top:706.52px" class="cls_002"><span class="cls_002">13</span></div>
+</div>
+</section>
+
+<section class="page-four">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-04.jpg" width=581 height=737></div>
+<div style="position:absolute;left:40.43px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Nuca ciudată</span></div>
+<div style="position:absolute;left:37.13px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:32.73px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:34.02px;top:97.44px" class="cls_005"><span class="cls_005">1. Povestește</span><span class="cls_013"> </span><span class="cls_006">despre imagine. Oare ce surpriză</span></div>
+<div style="position:absolute;left:34.01px;top:111.84px" class="cls_006"><span class="cls_006">a pregătit fetița pentru colegi în coșuleț?</span></div>
+
+<!--    Patrat click poza pag.14-->
+
+<!--    Trebuie sa folosestio "position: absolute si left si top" ca sa o pui patratul in pozitia corecta, peste poza-->
+    <div style="position:absolute;left:315.01px;top:65.84px;" data-bs-toggle="modal" data-bs-target="#modalPozaPag14" type="button" class="patratPozaPag14"></div>
+
+<div style="position:absolute;left:34.02px;top:155.25px" class="cls_005"><span class="cls_005">2. Dezleagă </span><span class="cls_006">ghicitoarea.
+
+    <!-- Button trigger modal -->
+    <button style="background: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0.0);" type="button" data-bs-toggle="modal" data-bs-target="#modalPag14">
+    </button></span></div>
+
+    <div style="position:absolute;left:49.81px;top:177.44px" class="cls_024"><span class="cls_024">Miezul e doar de mâncat,</span></div>
+    <div style="position:absolute;left:49.81px;top:191.84px" class="cls_024"><span class="cls_024">Coaja e de aruncat,</span></div>
+    <div style="position:absolute;left:49.81px;top:206.25px" class="cls_024"><span class="cls_024">Și în sac se pot păstra,</span></div>
+    <div style="position:absolute;left:49.81px;top:220.65px" class="cls_024"><span class="cls_024">Sparte doar se pot mânca.</span></div>
+    <div style="position:absolute;left:49.81px;top:235.05px" class="cls_024"><span class="cls_024">Ce este?</span></div>
+    <div style="position:absolute;left:33.64px;top:289.83px" class="cls_005"><span class="cls_005">3. Citește</span><span class="cls_028"> </span><span class="cls_006">textul.</span></div>
+    <div style="position:absolute;left:335.82px;top:292.39px" class="cls_025"><span class="cls_025">Nuca ciudată</span></div>
+    <div style="position:absolute;left:201.14px;top:326.62px" class="cls_006"><span class="cls_006">În curtea școlii este un nuc înalt și bătrân. În vârful unei crengi stă o</span></div>
+    <div style="position:absolute;left:184.12px;top:340.30px" class="cls_006"><span class="cls_006">nucă ciudată. Privește copiii voioși cu ghiozdane pe spate și cu buchete</span></div>
+    <div style="position:absolute;left:184.11px;top:353.99px" class="cls_006"><span class="cls_006">de flori în mâinile lor. Un băiat sosește cu bicicleta. Nuca se desprinde</span></div>
+    <div style="position:absolute;left:184.10px;top:367.67px" class="cls_006"><span class="cls_006">de pom, și se rostogolește în fața copilului.</span></div>
+    <div style="position:absolute;left:201.10px;top:383.51px" class="cls_006"><span class="cls_006">- Salut, băiețașule! De ce te grăbești?</span></div>
+    <div style="position:absolute;left:201.09px;top:399.35px" class="cls_006"><span class="cls_006">- Salut! Mă grăbesc să nu întârzii de la prima oră. Astăzi învățăm</span></div>
+    <div style="position:absolute;left:184.07px;top:413.03px" class="cls_006"><span class="cls_006">adunarea cu numerele peste o mie.</span></div>
+    <div style="position:absolute;left:201.08px;top:428.88px" class="cls_006"><span class="cls_006">- De ce vii cu bicicleta?</span></div>
+    <div style="position:absolute;left:201.07px;top:444.72px" class="cls_006"><span class="cls_006">- Pentru că locuiesc departe de școală. Trebuie să trec două străzi și</span></div>
+    <div style="position:absolute;left:187.05px;top:458.40px" class="cls_006"><span class="cls_006">după biserică o iau la stânga. În zece minute ajung la școală.</span></div>
+    <div style="position:absolute;left:201.05px;top:474.24px" class="cls_006"><span class="cls_006">- Pot să merg și eu la ore?</span></div>
+    <div style="position:absolute;left:201.05px;top:490.08px" class="cls_006"><span class="cls_006">- Cred, că nu. Aici învață numai copii.</span></div>
+    <div style="position:absolute;left:201.04px;top:505.92px" class="cls_006"><span class="cls_006">Nuca este tristă. Deodată se oprește o mașină. O fetiță coboară din</span></div>
+    <div style="position:absolute;left:184.02px;top:519.61px" class="cls_006"><span class="cls_006">ea și se grăbește spre școală.</span></div>
+    <div style="position:absolute;left:65.84px;top:531.69px" class="cls_037"><span class="cls_037">Cuvinte și expresii</span></div>
+    <div style="position:absolute;left:201.02px;top:535.45px" class="cls_006"><span class="cls_006">- Salut, fetițo! De ce te grăbești?</span></div>
+    <div style="position:absolute;left:201.02px;top:551.29px" class="cls_006"><span class="cls_006">- Salut! Mă grăbesc să nu întârzii de la prima oră. Astăzi învățăm</span></div>
+    <div style="position:absolute;left:35.46px;top:555.37px" class="cls_027"><span class="cls_027">ciudat(ă)</span></div>
+    <div style="position:absolute;left:184.00px;top:564.97px" class="cls_006"><span class="cls_006">lucruri interesante despre animalele sălbatice.</span></div>
+    <div style="position:absolute;left:35.46px;top:569.78px" class="cls_006"><span class="cls_006">- curios, neobișnuit</span></div>
+    <div style="position:absolute;left:201.00px;top:580.81px" class="cls_006"><span class="cls_006">- De ce vii cu mașina?</span></div>
+    <div style="position:absolute;left:35.46px;top:598.58px" class="cls_027"><span class="cls_027">se desprinde de pom</span></div>
+    <div style="position:absolute;left:200.99px;top:596.65px" class="cls_006"><span class="cls_006">- Pentru că locuiesc într-o altă localitate. Trebuie să pornesc la ora 7.</span></div>
+    <div style="position:absolute;left:35.46px;top:612.98px" class="cls_006"><span class="cls_006">- se rupe de pom, cade,</span></div>
+    <div style="position:absolute;left:183.98px;top:610.34px" class="cls_006"><span class="cls_006">Ajung în 20 de minute la școală.</span></div>
+    <div style="position:absolute;left:35.46px;top:626.66px" class="cls_006"><span class="cls_006">pică</span></div>
+    <div style="position:absolute;left:200.98px;top:626.18px" class="cls_006"><span class="cls_006">- Pot să merg și eu la ore?</span></div>
+    <div style="position:absolute;left:200.97px;top:642.02px" class="cls_006"><span class="cls_006">- Cred, că nu. Aici învață numai copii.</span></div>
+    <div style="position:absolute;left:35.46px;top:655.47px" class="cls_027"><span class="cls_027">localitate </span><span class="cls_006">- sat, oraș</span></div>
+    <div style="position:absolute;left:200.97px;top:657.86px" class="cls_006"><span class="cls_006">Nuca este tristă. Vrea să învețe și ea multe despre lume. Deodată un</span></div>
+    <div style="position:absolute;left:183.95px;top:671.54px" class="cls_006"><span class="cls_006">băiat o ridică, o aruncă în sus. Cade în buzunarul unui ghiozdan.</span></div>
+    <div style="position:absolute;left:200.95px;top:687.39px" class="cls_006"><span class="cls_006">Oare nu este în ghiozdanul tău? Caut-o!</span></div>
+    <div style="position:absolute;left:20.31px;top:706.52px" class="cls_002"><span class="cls_002">14</span></div>
+</div>
+</section>
+</section>
+</div>
+
+<div id="set-3">
+<section class="five-six">
+<section class="page-five">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-05.jpg" width=581 height=737></div>
+<div style="position:absolute;left:513.50px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:295.73px;top:30.56px" class="cls_020"><span class="cls_020">Din nou la școală</span></div>
+<div style="position:absolute;left:510.20px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:505.80px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:35.79px;top:108.69px" class="cls_005"><span class="cls_005">4. Dacă ai găsi nuca în ghiozdanul tău,</span><span class="cls_013"> </span><span class="cls_006">ce ai</span></div>
+<div style="position:absolute;left:308.98px;top:106.29px" class="cls_005"><span class="cls_005">9. Alege </span><span class="cls_006">însușirile care se potrivesc persona-</span></div>
+<div style="position:absolute;left:308.98px;top:120.69px" class="cls_006"><span class="cls_006">jelor. Alcătuiește propoziții cu aceste cuvinte.</span></div>
+<div style="position:absolute;left:35.79px;top:123.09px" class="cls_006"><span class="cls_006">putea face cu ea?</span><span class="cls_039"> </span><span class="cls_005">Notează</span><span class="cls_039"> </span><span class="cls_006">cu X răspunsul</span></div>
+<div style="position:absolute;left:35.79px;top:137.49px" class="cls_006"><span class="cls_006">potrivit.</span></div>
+<div style="position:absolute;left:306.65px;top:149.25px" class="cls_006"><span class="cls_006">curios</span></div>
+<div style="position:absolute;left:73.24px;top:153.21px" class="cls_006"><span class="cls_006">pot să o mănânc</span></div>
+<div style="position:absolute;left:507.86px;top:152.64px" class="cls_006"><span class="cls_006">punctuală</span></div>
+<div style="position:absolute;left:73.24px;top:167.90px" class="cls_006"><span class="cls_006">pot să o plantez</span></div>
+<div style="position:absolute;left:400.95px;top:169.35px" class="cls_006"><span class="cls_006">punctual</span></div>
+<div style="position:absolute;left:73.24px;top:182.59px" class="cls_006"><span class="cls_006">pot să joc fotbal cu ea</span></div>
+<div style="position:absolute;left:73.24px;top:197.28px" class="cls_006"><span class="cls_006">pot să o colorez</span></div>
+<div style="position:absolute;left:73.24px;top:211.97px" class="cls_006"><span class="cls_006">pot să o sparg pentru veverițe</span></div>
+<div style="position:absolute;left:417.91px;top:211.32px" class="cls_006"><span class="cls_006">ciudată</span></div>
+<div style="position:absolute;left:73.24px;top:226.66px" class="cls_006"><span class="cls_006">pot să o ascund sub frunză</span></div>
+<div style="position:absolute;left:294.80px;top:226.65px" class="cls_006"><span class="cls_006">voios</span></div>
+<div style="position:absolute;left:73.24px;top:241.35px" class="cls_006"><span class="cls_006">pot să umplu cozonacul</span></div>
+<div style="position:absolute;left:35.79px;top:270.04px" class="cls_005"><span class="cls_005">5. Imaginează-ți </span><span class="cls_006">un dialog cu nuca ciudată.</span></div>
+<div style="position:absolute;left:400.21px;top:289.23px" class="cls_006"><span class="cls_006">voioasă</span></div>
+<div style="position:absolute;left:35.79px;top:297.81px" class="cls_005"><span class="cls_005">6. Răspunde</span><span class="cls_013"> </span><span class="cls_006">la întrebări.</span></div>
+<div style="position:absolute;left:327.61px;top:305.55px" class="cls_006"><span class="cls_006">grăbit</span></div>
+<div style="position:absolute;left:494.33px;top:308.94px" class="cls_006"><span class="cls_006">curioasă</span></div>
+<div style="position:absolute;left:35.79px;top:312.21px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> Care</span><span class="cls_006"> este titlul textului?</span></div>
+<div style="position:absolute;left:424.74px;top:320.74px" class="cls_006"><span class="cls_006">grăbită</span></div>
+<div style="position:absolute;left:35.79px;top:326.61px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> Cine</span><span class="cls_006"> sunt personajele lecturii?</span></div>
+<div style="position:absolute;left:35.79px;top:341.01px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> Unde</span><span class="cls_006"> se grăbesc copiii?</span></div>
+<div style="position:absolute;left:35.79px;top:355.41px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> De ce</span><span class="cls_006"> se grăbesc copiii?</span></div>
+<div style="position:absolute;left:308.00px;top:355.37px" class="cls_005"><span class="cls_005">10. Alege </span><span class="cls_006">răspunsurile potrivite.</span></div>
+<div style="position:absolute;left:35.79px;top:369.81px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> Ce</span><span class="cls_006"> vrea nuca?</span></div>
+<div style="position:absolute;left:308.80px;top:376.32px" class="cls_038"><span class="cls_038">Cum ajungi la școală?</span></div>
+<div style="position:absolute;left:449.24px;top:375.32px" class="cls_038"><span class="cls_038">Cu cine vii la școală?</span></div>
+<div style="position:absolute;left:35.79px;top:384.22px" class="cls_006"><span class="cls_006">•</span><span class="cls_038"> De ce</span><span class="cls_006"> este important să mergem la școală?</span></div>
+<div style="position:absolute;left:308.80px;top:390.72px" class="cls_024"><span class="cls_024">a. pe jos</span></div>
+<div style="position:absolute;left:449.24px;top:389.72px" class="cls_024"><span class="cls_024">a. singur</span></div>
+<div style="position:absolute;left:308.80px;top:405.12px" class="cls_024"><span class="cls_024">b. cu bicicleta</span></div>
+<div style="position:absolute;left:449.24px;top:404.12px" class="cls_024"><span class="cls_024">b. cu părinții</span></div>
+<div style="position:absolute;left:65.56px;top:408.63px" class="cls_040"><span class="cls_040">Cine?</span></div>
+<div style="position:absolute;left:150.71px;top:415.00px" class="cls_040"><span class="cls_040">Ce?    Care?</span></div>
+<div style="position:absolute;left:308.80px;top:419.52px" class="cls_024"><span class="cls_024">c. cu mașina</span></div>
+<div style="position:absolute;left:449.24px;top:418.52px" class="cls_024"><span class="cls_024">c. cu bunicii</span></div>
+<div style="position:absolute;left:308.80px;top:433.92px" class="cls_024"><span class="cls_024">d. cu tramvaiul</span></div>
+<div style="position:absolute;left:449.24px;top:432.93px" class="cls_024"><span class="cls_024">d. cu colegii</span></div>
+<div style="position:absolute;left:308.80px;top:460.32px" class="cls_038"><span class="cls_038">Ce clădiri vezi în drumul tău către școală?</span></div>
+<div style="position:absolute;left:205.93px;top:474.22px" class="cls_040"><span class="cls_040">Unde?</span></div>
+<div style="position:absolute;left:308.80px;top:474.72px" class="cls_024"><span class="cls_024">a. biserica</span></div>
+<div style="position:absolute;left:308.80px;top:489.12px" class="cls_024"><span class="cls_024">b. farmacia</span></div>
+<div style="position:absolute;left:83.58px;top:492.55px" class="cls_040"><span class="cls_040">De ce?</span></div>
+<div style="position:absolute;left:308.80px;top:503.52px" class="cls_024"><span class="cls_024">c. magazinul</span></div>
+<div style="position:absolute;left:308.80px;top:517.92px" class="cls_024"><span class="cls_024">d. primăria</span></div>
+<div style="position:absolute;left:36.03px;top:525.90px" class="cls_005"><span class="cls_005">7. Selectează </span><span class="cls_006">din text câte trei cuvinte care</span></div>
+<div style="position:absolute;left:36.03px;top:540.30px" class="cls_006"><span class="cls_006">sunt formate din:</span></div>
+<div style="position:absolute;left:308.44px;top:550.21px" class="cls_005"><span class="cls_005">11. Numerotează </span><span class="cls_006">propozițiile în ordinea corectă.</span></div>
+<div style="position:absolute;left:36.03px;top:554.70px" class="cls_006"><span class="cls_006">• două silabe:  • trei silabe:</span></div>
+<div style="position:absolute;left:183.85px;top:554.70px" class="cls_006"><span class="cls_006">• cinci silabe:</span></div>
+<div style="position:absolute;left:308.43px;top:564.61px" class="cls_005"><span class="cls_005">Transcrie</span><span class="cls_006">-le în caiet.</span></div>
+<div style="position:absolute;left:36.08px;top:579.49px" class="cls_005"><span class="cls_005">8. Înlocuiește</span><span class="cls_013"> </span><span class="cls_006">cuvintele subliniate cu cele</span></div>
+
+<!--    Inputs exercitiu Pag 15-->
+    <div style="position:absolute;left:310.45px;top:589.56px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+
+    <div style="position:absolute;left:329.45px;top:589.56px" class="cls_006"><span class="cls_006">Se oprește la semafor.</span></div>
+<div style="position:absolute;left:36.08px;top:593.90px" class="cls_006"><span class="cls_006">scrise dedesubt.</span></div>
+
+    <div style="position:absolute;left:310.45px;top:608.99px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+
+<div style="position:absolute;left:329.45px;top:608.28px" class="cls_006"><span class="cls_006">Irina pornește la școală la ora 7 și un sfert.</span></div>
+    <div style="position:absolute;left:36.08px;top:611.18px" class="cls_070"><span class="cls_070">Băiatul</span><span class="cls_024"> sosește cu bicicleta.</span></div>
+<div style="position:absolute;left:36.08px;top:628.46px" class="cls_006"><span class="cls_006">• băieții</span></div>
+
+    <div style="position:absolute;left:310.45px;top:627.01px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+    <div style="position:absolute;left:329.45px;top:627.01px" class="cls_006"><span class="cls_006">După ce traversează strada, o ia la dreapta.</span></div>
+<div style="position:absolute;left:36.08px;top:645.74px" class="cls_070"><span class="cls_070">Fetița</span><span class="cls_024"> coboară din mașină.</span></div>
+
+    <div style="position:absolute;left:310.45px;top:645.73px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+    <div style="position:absolute;left:329.44px;top:645.73px" class="cls_006"><span class="cls_006">Trece prin parcul din fața primăriei.</span></div>
+<div style="position:absolute;left:36.08px;top:663.02px" class="cls_006"><span class="cls_006">• fetițele</span></div>
+
+    <div style="position:absolute;left:310.45px;top:665.99px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+    <div style="position:absolute;left:329.44px;top:664.45px" class="cls_006"><span class="cls_006">Ajunge la școală la ora 8 fără un sfert.</span></div>
+<div style="position:absolute;left:36.08px;top:680.31px" class="cls_070"><span class="cls_070">Eleva</span><span class="cls_024"> locuiește departe.</span></div>
+
+    <div style="position:absolute;left:310.45px;top:684.99px"><input class="scrisPag15" style="width:14px; height:14px;" type="text"></div>
+    <div style="position:absolute;left:329.44px;top:683.17px" class="cls_006"><span class="cls_006">Școala este lângă primărie.</span></div>
+<div style="position:absolute;left:36.08px;top:697.59px" class="cls_006"><span class="cls_006">• elevele</span></div>
+<div style="position:absolute;left:549.84px;top:706.52px" class="cls_002"><span class="cls_002">15</span></div>
+</div>
+</section>
+
+<section class="page-six">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-06.jpg" width=581 height=737></div>
+<div style="position:absolute;left:40.43px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Şcoala veselă din pădure</span></div>
+<div style="position:absolute;left:37.13px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:32.73px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+
+    <!-- Patrat click poza pag 16 -->
+    <div style="position:absolute;left:28px;top:90px;" data-bs-toggle="modal" data-bs-target="#modalPozaPag16" type="button" class="patratPozaPag16"></div>
+    <!-- Button trigger modal -->
+    <a style="background: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0.0);" type="button" data-bs-toggle="modal" data-bs-target="#modalPag16">
+    </a>
+
+<div style="position:absolute;left:289.13px;top:105.06px" class="cls_006"><span class="cls_006">Pădurea e o școală verde, veselă. Toate animalele</span></div>
+<div style="position:absolute;left:272.12px;top:119.47px" class="cls_006"><span class="cls_006">mici merg la școală. Învățătoarea lor este doamna</span></div>
+<div style="position:absolute;left:272.12px;top:133.87px" class="cls_006"><span class="cls_006">Bufniță.</span></div>
+<div style="position:absolute;left:289.13px;top:148.27px" class="cls_006"><span class="cls_006">Hai, să facem cunoștință cu elevii acestei școli!</span></div>
+<div style="position:absolute;left:289.13px;top:162.67px" class="cls_006"><span class="cls_006">Ursulețul Martinică citește o carte despre fructele</span></div>
+<div style="position:absolute;left:272.12px;top:177.07px" class="cls_006"><span class="cls_006">de pădure. Îi plac murele.</span></div>
+<div style="position:absolute;left:289.13px;top:191.47px" class="cls_006"><span class="cls_006">Iepurașul Hop-Țop se grăbește mereu. El învață cum</span></div>
+<div style="position:absolute;left:272.12px;top:205.87px" class="cls_006"><span class="cls_006">se citește ceasul.</span></div>
+<div style="position:absolute;left:289.12px;top:220.28px" class="cls_006"><span class="cls_006">Castorul Sam învață cum se construiește o casă din</span></div>
+<div style="position:absolute;left:272.11px;top:234.68px" class="cls_006"><span class="cls_006">lemn. Va deveni meșter priceput.</span></div>
+<div style="position:absolute;left:289.12px;top:249.08px" class="cls_006"><span class="cls_006">Cucului îi place ora de muzică. El repetă în continu:</span></div>
+<div style="position:absolute;left:272.11px;top:263.48px" class="cls_006"><span class="cls_006">Cu-cu! Cu-cu!</span></div>
+<div style="position:absolute;left:289.12px;top:277.88px" class="cls_006"><span class="cls_006">Bufnițel e supărat. Sunt grele lecțiile de zbor, mai</span></div>
+<div style="position:absolute;left:73.09px;top:280.66px" class="cls_037"><span class="cls_037">Cuvinte și Expresii</span></div>
+<div style="position:absolute;left:272.11px;top:292.28px" class="cls_006"><span class="cls_006">ales ziua. Abia mai vede la lumina soarelui.</span></div>
+<div style="position:absolute;left:37.65px;top:303.18px" class="cls_027"><span class="cls_027">poiană</span><span class="cls_006"> - loc întins prin pădure,</span></div>
+<div style="position:absolute;left:289.12px;top:306.68px" class="cls_006"><span class="cls_006">Greierele e mare muzician. El cântă la chitară.</span></div>
+<div style="position:absolute;left:88.53px;top:317.58px" class="cls_006"><span class="cls_006">fără copaci și tufișuri</span></div>
+<div style="position:absolute;left:289.12px;top:321.09px" class="cls_006"><span class="cls_006">În pauză toți se așează în poiană și după o gustare</span></div>
+<div style="position:absolute;left:37.65px;top:331.98px" class="cls_027"><span class="cls_027">castor</span><span class="cls_038"> </span><span class="cls_006">- animal asemănător vidrei</span></div>
+<div style="position:absolute;left:272.11px;top:335.49px" class="cls_006"><span class="cls_006">bună se joacă împreună. Când ciocănitoarea bate cu</span></div>
+<div style="position:absolute;left:37.65px;top:346.38px" class="cls_027"><span class="cls_027">va deveni</span><span class="cls_006"> - va fi</span></div>
+<div style="position:absolute;left:272.11px;top:349.89px" class="cls_006"><span class="cls_006">pliscul ora prânzului, fiecare se îndreaptă spre adăpos-</span></div>
+<div style="position:absolute;left:37.65px;top:360.79px" class="cls_027"><span class="cls_027">ora prânzului</span><span class="cls_038"> </span><span class="cls_006">- ora la care se ia prânzul</span></div>
+<div style="position:absolute;left:272.10px;top:364.29px" class="cls_006"><span class="cls_006">tul său.</span></div>
+<div style="position:absolute;left:37.64px;top:375.19px" class="cls_027"><span class="cls_027">priceput</span><span class="cls_038"> </span><span class="cls_006">- bun, talentat într-o meserie</span></div>
+<div style="position:absolute;left:308.98px;top:406.12px" class="cls_005"><span class="cls_005">2. Recunoaște</span><span class="cls_028"> </span><span class="cls_006">animalul!</span></div>
+<div style="position:absolute;left:28.48px;top:409.62px" class="cls_005"><span class="cls_005">1. Alege</span></div>
+<div style="position:absolute;left:74.66px;top:409.62px" class="cls_006"><span class="cls_006">varianta corectă și</span></div>
+<div style="position:absolute;left:173.82px;top:409.62px" class="cls_005"><span class="cls_005">copiază</span></div>
+<div style="position:absolute;left:218.14px;top:409.62px" class="cls_006"><span class="cls_006">popozițiile</span></div>
+<div style="position:absolute;left:308.98px;top:420.52px" class="cls_006"><span class="cls_006">Cine spune următoarele?</span></div>
+<div style="position:absolute;left:28.48px;top:424.02px" class="cls_006"><span class="cls_006">corecte.</span></div>
+<div style="position:absolute;left:308.98px;top:437.08px" class="cls_006"><span class="cls_006">a) Sunt mereu grăbit. …</span></div>
+<div style="position:absolute;left:28.48px;top:446.12px" class="cls_038"><span class="cls_038">Școala verde, veselă era</span></div>
+<div style="position:absolute;left:308.98px;top:453.64px" class="cls_006"><span class="cls_006">b) Îmi place mai mult să zbor noaptea</span></div>
+<div style="position:absolute;left:28.48px;top:460.52px" class="cls_006"><span class="cls_006"><span class="options-1 correct">a)</span> în pădure</span></div>
+<div style="position:absolute;left:308.98px;top:470.21px" class="cls_006"><span class="cls_006">c) Cântecul meu e cel mai ușor de învățat</span></div>
+<div style="position:absolute;left:28.48px;top:474.92px" class="cls_006"><span class="cls_006"><span class="options-1 incorrect">b)</span> pe câmpie</span></div>
+<div style="position:absolute;left:308.98px;top:486.77px" class="cls_006"><span class="cls_006">d) Construiesc casa mea în apă</span></div>
+<div style="position:absolute;left:28.48px;top:489.32px" class="cls_006"><span class="cls_006"><span class="options-1 incorrect">c)</span> lângă lac</span></div>
+<div style="position:absolute;left:308.98px;top:503.33px" class="cls_006"><span class="cls_006">e) Îmi plac fructele de pădure</span></div>
+<div style="position:absolute;left:29.37px;top:509.12px" class="cls_038"><span class="cls_038">Învățătoarea școlarilor era</span></div>
+<div style="position:absolute;left:308.97px;top:519.89px" class="cls_006"><span class="cls_006">f) Cânt la chitară toată vara</span></div>
+<div style="position:absolute;left:29.37px;top:523.52px" class="cls_006"><span class="cls_006"><span class="options-2 incorrect">a)</span> vulpea</span></div>
+<div style="position:absolute;left:29.37px;top:537.92px" class="cls_006"><span class="cls_006"><span class="options-2 correct">b)</span> bufnița</span></div>
+<div style="position:absolute;left:308.60px;top:544.56px" class="cls_005"><span class="cls_005">3. Continuă </span><span class="cls_006">enumerarea!</span></div>
+<div style="position:absolute;left:29.37px;top:552.32px" class="cls_006"><span class="cls_006"><span class="options-2 incorrect">c)</span> ciocănitoarea</span></div>
+<div style="position:absolute;left:28.35px;top:571.62px" class="cls_038"><span class="cls_038">Fiecare elev</span></div>
+<div style="position:absolute;left:316.35px;top:574.74px" class="cls_006"><span class="cls_006">a) Fructe de pădure: ghindă, alune, ...</span></div>
+<div style="position:absolute;left:28.35px;top:586.02px" class="cls_006"><span class="cls_006"><span class="options-3 incorrect">a)</span> a avut aceeași preocupare</span></div>
+<div style="position:absolute;left:28.35px;top:600.42px" class="cls_006"><span class="cls_006"><span class="options-3 correct">b)</span> a făcut altceva</span></div>
+<div style="position:absolute;left:28.34px;top:614.82px" class="cls_006"><span class="cls_006"><span class="options-3 incorrect">c)</span> a ascultat-o pe învățătoare</span></div>
+<div style="position:absolute;left:316.17px;top:613.73px" class="cls_006"><span class="cls_006">b) Instrumente muzicale: chitară, tobă, …</span></div>
+<div style="position:absolute;left:28.35px;top:638.37px" class="cls_038"><span class="cls_038">Fiecare se îndreaptă spre adăpostul lui</span></div>
+<div style="position:absolute;left:316.45px;top:648.83px" class="cls_006"><span class="cls_006">c) Nume de păsări: bufniță, cucu, …</span></div>
+<div style="position:absolute;left:28.35px;top:652.77px" class="cls_006"><span class="cls_006"><span class="options-4 incorrect">a)</span> seara</span></div>
+<div style="position:absolute;left:28.35px;top:667.17px" class="cls_006"><span class="cls_006"><span class="options-4 incorrect">b)</span> după lecții</span></div>
+<div style="position:absolute;left:28.35px;top:681.57px" class="cls_006"><span class="cls_006"><span class="options-4 correct">c)</span> la ora prânzului</span></div>
+<div style="position:absolute;left:316.43px;top:681.34px" class="cls_006"><span class="cls_006">d) Tipuri de ceas: ceas de mână, ceas</span></div>
+<div style="position:absolute;left:316.43px;top:694.31px" class="cls_006"><span class="cls_006">deșteptător, ….</span></div>
+<div style="position:absolute;left:20.31px;top:706.52px" class="cls_002"><span class="cls_002">16</span></div>
+</div>
+</section>
+</section>
+</div>
+
+<div id="set-4">
+<section class="seven-eight">
+<section class="page-seven">
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="images/background-07.jpg" width=581 height=737></div>
+<div style="position:absolute;left:513.50px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+<div style="position:absolute;left:295.73px;top:30.56px" class="cls_020"><span class="cls_020">Din nou la școală</span></div>
+<div style="position:absolute;left:510.20px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+<div style="position:absolute;left:505.80px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+<div style="position:absolute;left:29.58px;top:104.75px" class="cls_005"><span class="cls_005">4. Ajută</span><span class="cls_006">-l pe iepurașul Hop-Țop să citească ceasul. </span><span class="cls_005">Citește</span><span class="cls_006">-le!</span></div>
+<div style="position:absolute;left:40.87px;top:135.82px" class="cls_006"><span class="cls_006">a)</span></div>
+<div style="position:absolute;left:340.91px;top:182.14px" class="cls_006"><span class="cls_006">Este ora 10</span></div>
+<div style="position:absolute;left:469.69px;top:182.21px" class="cls_006"><span class="cls_006">Este ora 12</span></div>
+<div style="position:absolute;left:76.96px;top:187.01px" class="cls_006"><span class="cls_006">Este ora 9</span></div>
+<div style="position:absolute;left:199.50px;top:188.15px" class="cls_006"><span class="cls_006">Este ora 8 fix.</span></div>
+<div style="position:absolute;left:336.74px;top:196.54px" class="cls_006"><span class="cls_006">fără un sfert.</span></div>
+<div style="position:absolute;left:471.50px;top:196.61px" class="cls_006"><span class="cls_006">și un sfert.</span></div>
+<div style="position:absolute;left:72.30px;top:201.41px" class="cls_006"><span class="cls_006">și jumătate.</span></div>
+<div style="position:absolute;left:40.68px;top:226.43px" class="cls_006"><span class="cls_006">b)</span></div>
+<div style="position:absolute;left:64.02px;top:265.18px" class="cls_006"><span class="cls_006">Este ora 12 fix.</span></div>
+<div style="position:absolute;left:203.05px;top:264.71px" class="cls_006"><span class="cls_006">Este ora 9 și</span></div>
+<div style="position:absolute;left:338.26px;top:264.00px" class="cls_006"><span class="cls_006">Este ora 9 și</span></div>
+<div style="position:absolute;left:463.84px;top:264.71px" class="cls_006"><span class="cls_006">Este ora 12 și</span></div>
+<div style="position:absolute;left:199.34px;top:279.11px" class="cls_006"><span class="cls_006">30 de minute.</span></div>
+<div style="position:absolute;left:334.56px;top:278.40px" class="cls_006"><span class="cls_006">45 de minute.</span></div>
+<div style="position:absolute;left:471.55px;top:279.11px" class="cls_006"><span class="cls_006">15 minute.</span></div>
+<div style="position:absolute;left:29.58px;top:308.02px" class="cls_005"><span class="cls_005">5. Ascultă/citește </span><span class="cls_006">cum se prezintă un nou</span></div>
+<div style="position:absolute;left:309.25px;top:308.02px" class="cls_005"><span class="cls_005">8. Alcătuiește </span><span class="cls_006">denumirea rechizitelor școlare</span></div>
+<div style="position:absolute;left:29.58px;top:322.42px" class="cls_006"><span class="cls_006">elev venit la școala verde, veselă.
+    <!-- Button trigger modal -->
+<a style="background: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0.0);" type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPag17">
+</a></span></div>
+<div style="position:absolute;left:309.25px;top:320.98px" class="cls_006"><span class="cls_006">din literele scrise pe petele de cerneală.</span></div>
+<div style="position:absolute;left:41.57px;top:346.23px" class="cls_024"><span class="cls_024">Salut, copii!</span></div>
+<div style="position:absolute;left:328.76px;top:357.30px" class="cls_006"><span class="cls_006">caiet</span></div>
+<div style="position:absolute;left:390.11px;top:359.94px" class="cls_006"><span class="cls_006">ascuțitoare</span></div>
+<div style="position:absolute;left:41.57px;top:360.63px" class="cls_024"><span class="cls_024">Mă numesc Broscuța Oac.</span></div>
+<div style="position:absolute;left:502.26px;top:361.36px" class="cls_006"><span class="cls_006">penar</span></div>
+<div style="position:absolute;left:41.57px;top:375.03px" class="cls_024"><span class="cls_024">Îmi place foarte mult să stau în apa</span></div>
+<div style="position:absolute;left:41.57px;top:387.27px" class="cls_024"><span class="cls_024">lacului. Ora mea preferată la școală este</span></div>
+<div style="position:absolute;left:41.57px;top:399.52px" class="cls_024"><span class="cls_024">ora de educație fizică și sport. În timpul</span></div>
+<div style="position:absolute;left:456.71px;top:398.16px" class="cls_006"><span class="cls_006">stilou</span></div>
+<div style="position:absolute;left:41.57px;top:411.76px" class="cls_024"><span class="cls_024">meu liber merg la atletism și sunt</span></div>
+<div style="position:absolute;left:41.57px;top:424.00px" class="cls_024"><span class="cls_024">campioană la sărituri.</span></div>
+<div style="position:absolute;left:328.07px;top:427.58px" class="cls_006"><span class="cls_006">carte</span></div>
+<div style="position:absolute;left:404.82px;top:427.28px" class="cls_006"><span class="cls_006">creion</span></div>
+<div style="position:absolute;left:506.38px;top:427.22px" class="cls_006"><span class="cls_006">pix</span></div>
+<div style="position:absolute;left:309.30px;top:470.79px" class="cls_005"><span class="cls_005">9. Transcrie </span><span class="cls_006">în caiet, în ordine alfabetică, cuvin-</span></div>
+<div style="position:absolute;left:309.30px;top:483.75px" class="cls_006"><span class="cls_006">tele obținute la exercițiul de mai sus.</span></div>
+<div style="position:absolute;left:309.30px;top:507.26px" class="cls_005"><span class="cls_005">10. Completează </span><span class="cls_006">cuvintele de mai jos cu litere</span></div>
+<div style="position:absolute;left:309.30px;top:521.66px" class="cls_006"><span class="cls_006">potrivite.</span></div>
+<div style="position:absolute;left:464.71px;top:530.32px" class="cls_006"><span class="cls_006">șc_l_r_ț_</span></div>
+<div style="position:absolute;left:309.66px;top:539.22px" class="cls_006"><span class="cls_006">șc_ _l_</span></div>
+<div style="position:absolute;left:386.98px;top:539.20px" class="cls_006"><span class="cls_006">șc_ _l_</span></div>
+<div style="position:absolute;left:29.58px;top:548.46px" class="cls_005"><span class="cls_005">6. Prezintă</span><span class="cls_006">-te în fața clasei, asemănător</span></div>
+<div style="position:absolute;left:464.71px;top:551.93px" class="cls_006"><span class="cls_006">s_pt_mbr_ _</span></div>
+<div style="position:absolute;left:29.58px;top:562.86px" class="cls_006"><span class="cls_006">broscuței.</span></div>
+<div style="position:absolute;left:309.66px;top:560.83px" class="cls_006"><span class="cls_006">l_cț_ _</span></div>
+<div style="position:absolute;left:386.98px;top:560.80px" class="cls_006"><span class="cls_006">șc_l_r</span></div>
+<div style="position:absolute;left:464.71px;top:573.53px" class="cls_006"><span class="cls_006">cl_p_ț_l</span></div>
+<div style="position:absolute;left:29.58px;top:588.01px" class="cls_005"><span class="cls_005">7. Observă </span><span class="cls_006">ordinea înscrierii elevilor în</span></div>
+<div style="position:absolute;left:29.58px;top:602.41px" class="cls_006"><span class="cls_006">catalogul de la școala din pădurea verde.</span></div>
+<div style="position:absolute;left:320.58px;top:608.56px" class="cls_046"><span class="cls_046">Să ne reamintim!</span></div>
+<div style="position:absolute;left:122.54px;top:626.68px" class="cls_043"><span class="cls_043">1. Bufnițel</span></div>
+<div style="position:absolute;left:319.35px;top:626.26px" class="cls_006"><span class="cls_006">* Totalitatea literelor unei limbi</span></div>
+<div style="position:absolute;left:200.81px;top:637.44px" class="cls_045"><span class="cls_045">4. Greierele</span></div>
+<div style="position:absolute;left:319.35px;top:638.50px" class="cls_006"><span class="cls_006">așezate într-o anumită ordine,</span></div>
+<div style="position:absolute;left:129.27px;top:643.00px" class="cls_043"><span class="cls_043">2. Castor</span></div>
+<div style="position:absolute;left:319.35px;top:650.74px" class="cls_006"><span class="cls_006">alcătuiește alfabetul limbii respective.</span></div>
+<div style="position:absolute;left:200.27px;top:653.42px" class="cls_045"><span class="cls_045">5. Iepurașul</span></div>
+<div style="position:absolute;left:135.43px;top:658.56px" class="cls_043"><span class="cls_043">3. Cucul</span></div>
+<div style="position:absolute;left:200.69px;top:668.43px" class="cls_045"><span class="cls_045">6. Ursulețul</span></div>
+<div style="position:absolute;left:319.35px;top:671.06px" class="cls_006"><span class="cls_006">* Alfabetul limbii române este:</span></div>
+<div style="position:absolute;left:29.86px;top:679.88px" class="cls_006"><span class="cls_006">În catalog, elevii sunt</span></div>
+<div style="position:absolute;left:319.35px;top:683.30px" class="cls_047"><span class="cls_047">a</span><span class="cls_006">, </span><span class="cls_047">ă</span><span class="cls_006">, </span><span class="cls_047">î</span><span class="cls_006">, </span><span class="cls_048">b</span><span class="cls_006">, </span><span class="cls_048">c</span><span class="cls_006">, </span><span class="cls_048">d</span><span class="cls_006">, </span><span class="cls_047">e</span><span class="cls_006">, </span><span class="cls_048">f</span><span class="cls_006">, </span><span class="cls_048">g</span><span class="cls_006">, </span><span class="cls_048">h</span><span class="cls_006">, </span><span class="cls_047">i</span><span class="cls_006">, </span><span class="cls_047">î</span><span class="cls_006">, </span><span class="cls_048">j</span><span class="cls_006">, </span><span class="cls_048">k</span><span class="cls_006">, </span><span class="cls_048">l</span><span class="cls_006">,</span><span class="cls_048"> m</span><span class="cls_006">, </span><span class="cls_048">n</span><span class="cls_006">, </span><span class="cls_047">o</span><span class="cls_006">, </span><span class="cls_048">p</span><span class="cls_006">, </span><span class="cls_048">q</span><span class="cls_006">,</span></div>
+<div style="position:absolute;left:29.86px;top:694.28px" class="cls_006"><span class="cls_006">înscriși </span><span class="cls_038">în ordine alfabetică.</span></div>
+<div style="position:absolute;left:319.34px;top:695.54px" class="cls_048"><span class="cls_048">r</span><span class="cls_006">, </span><span class="cls_048">s</span><span class="cls_006">, </span><span class="cls_048">ș</span><span class="cls_006">, </span><span class="cls_048">t</span><span class="cls_006">, </span><span class="cls_048">ț</span><span class="cls_006">, </span><span class="cls_047">u</span><span class="cls_006">, </span><span class="cls_048">v</span><span class="cls_006">, </span><span class="cls_048">w</span><span class="cls_006">, </span><span class="cls_048">x</span><span class="cls_006">, </span><span class="cls_048">y</span><span class="cls_006">, </span><span class="cls_048">z</span><span class="cls_006">.</span></div>
+<div style="position:absolute;left:549.84px;top:706.66px" class="cls_002"><span class="cls_002">17</span></div>
+</div>
+</section>
+    <section class="page-eight">
+        <div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+            <div style="position:absolute;left:0px;top:0px">
+                <img src="images/background-08.jpg" width=581 height=737></div>
+            <div style="position:absolute;left:40.43px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+            <div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Recapitulare</span></div>
+            <div style="position:absolute;left:37.13px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+            <div style="position:absolute;left:32.73px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+            <div style="position:absolute;left:27.38px;top:96.87px" class="cls_050"><span class="cls_050">1. Citește</span><span class="cls_051"> </span><span class="cls_052">textul</span></div>
+            <div style="position:absolute;left:302.84px;top:92.02px" class="cls_025"><span class="cls_025">Prima zi de școală</span></div>
+            <div style="position:absolute;left:276.31px;top:107.57px" class="cls_049"><span class="cls_049">text adaptat după Mihaela Deleanu</span></div>
+            <div style="position:absolute;left:160.5px;top:132.27px" class="cls_006"><span class="cls_006">S-a sfârșit vara și odată cu ea și vacanța. Este prima zi de școală.</span></div>
+            <div style="position:absolute;left:160.5px;top:145.23px" class="cls_006"><span class="cls_006">Copiii o așteaptă emoționați și nerăbdători pe învățătoarea cea nouă. Ei au</span></div>
+            <div style="position:absolute;left:145.67px;top:156.75px" class="cls_006"><span class="cls_006">cunoscut-o deja în curtea școlii. Dar totul s-a petrecut atât de repede, încât sunt</span></div>
+            <div style="position:absolute;left:150.65px;top:168.27px" class="cls_006"><span class="cls_006">în continuare foarte curioși. De altfel, nerăbdătoare este și doamna</span></div>
+            <div style="position:absolute;left:150.64px;top:179.79px" class="cls_006"><span class="cls_006">învățătoare, care se îndreaptă acum spre clasă. Oare cum sunt prichindeii</span></div>
+            <div style="position:absolute;left:150.63px;top:191.32px" class="cls_006"><span class="cls_006">mei?”, se întreabă ea în gând și zâmbește.</span></div>
+            <div style="position:absolute;left:167.63px;top:204.28px" class="cls_006"><span class="cls_006">- Bună dimineața, copii! Vă urez încă o dată: Bun venit la școală! Numele</span></div>
+            <div style="position:absolute;left:150.61px;top:215.80px" class="cls_006"><span class="cls_006">meu este Miruna Zamfir. Pe tine cum te cheamă?- a întrebat ea un băiețel din</span></div>
+            <div style="position:absolute;left:150.60px;top:227.32px" class="cls_006"><span class="cls_006">prima bancă.</span></div>
+            <div style="position:absolute;left:167.60px;top:240.28px" class="cls_006"><span class="cls_006">- Mihai.</span></div>
+            <div style="position:absolute;left:167.60px;top:253.24px" class="cls_006"><span class="cls_006">Învățătoarea s-a gândit puțin și a zâmbit. A răsfoit catalogul și a spus:</span></div>
+            <div style="position:absolute;left:167.59px;top:266.20px" class="cls_006"><span class="cls_006">- Acum aș vrea să o cunosc pe Maria.</span></div>
+            <div style="position:absolute;left:167.58px;top:279.16px" class="cls_006"><span class="cls_006">Trei fetițe s-au ridicat repede și au spus deodată.</span></div>
+            <div style="position:absolute;left:167.58px;top:292.13px" class="cls_006"><span class="cls_006">- Eu sunt.</span></div>
+            <div style="position:absolute;left:167.57px;top:305.09px" class="cls_006"><span class="cls_006">- Și eu cum fac să nu vă încurc? Doar sunteți trei fetițe foarte diferite!</span></div>
+            <div style="position:absolute;left:167.56px;top:318.05px" class="cls_006"><span class="cls_006">- Numele meu este Maria Petrescu.</span></div>
+            <div style="position:absolute;left:167.56px;top:331.01px" class="cls_006"><span class="cls_006">- Pe mine mă cheamă Maria Dinu.</span></div>
+            <div style="position:absolute;left:167.55px;top:343.97px" class="cls_006"><span class="cls_006">- Iar eu sunt Maria Mureșan.</span></div>
+            <div style="position:absolute;left:167.54px;top:356.93px" class="cls_006"><span class="cls_006">- Încântată să vă cunosc dragile mele! V-ați prezentat foarte frumos.</span></div>
+            <div style="position:absolute;left:167.53px;top:369.89px" class="cls_006"><span class="cls_006">Doamna învățătoare s-a întors spre băiețelul din prima bancă și l-a întrebat</span></div>
+            <div style="position:absolute;left:150.52px;top:381.41px" class="cls_006"><span class="cls_006">cum se numește.</span></div>
+            <div style="position:absolute;left:167.52px;top:394.38px" class="cls_006"><span class="cls_006">- Numele meu este Mihai Anghelescu.</span></div>
+            <div style="position:absolute;left:28.35px;top:421.05px" class="cls_005"><span class="cls_005">2. Spune </span><span class="cls_006">care dintre copiii desenaţi este</span><span class="cls_038">:</span></div>
+            <div style="position:absolute;left:295.38px;top:421.05px" class="cls_005"><span class="cls_005">8. Tu cum te-ai prezenta doamnei tale învăță-</span></div>
+            <div style="position:absolute;left:28.35px;top:435.45px" class="cls_006"><span class="cls_006">• curios • vesel • emoționat • nerăbdător</span></div>
+            <div style="position:absolute;left:295.38px;top:435.45px" class="cls_005"><span class="cls_005">toare? Completează </span><span class="cls_006">dialogul!</span></div>
+            <div style="position:absolute;left:28.35px;top:455.17px" class="cls_005"><span class="cls_005">3. Selectează</span><span class="cls_038">, </span><span class="cls_006">din text, numele elevilor.</span><span class="cls_005"> Scrie</span><span class="cls_006">-le</span></div>
+            <div style="position:absolute;left:351.01px;top:458.12px" class="cls_015"><span class="cls_015">- Cum te cheamă?</span></div>
+            <div style="position:absolute;left:28.34px;top:467.41px" class="cls_006"><span class="cls_006">în ordine alfabetică.</span></div>
+            <div style="position:absolute;left:351.01px;top:470.12px" class="cls_015"><span class="cls_015">- Unde locuiești?</span></div>
+            <div style="position:absolute;left:351.01px;top:482.12px" class="cls_015"><span class="cls_015">- Ce lucrează părinții tăi?</span></div>
+            <div style="position:absolute;left:28.33px;top:485.41px" class="cls_005"><span class="cls_005">4. Citiți</span><span class="cls_028"> </span><span class="cls_006">textul pe roluri.</span></div>
+            <div style="position:absolute;left:351.01px;top:494.12px" class="cls_015"><span class="cls_015">- La ce oră pornești la școală?</span></div>
+            <div style="position:absolute;left:28.32px;top:503.42px" class="cls_005"><span class="cls_005">5.</span><span class="cls_028"> </span><span class="cls_006">După părerea ta, cum se continuă această</span></div>
+            <div style="position:absolute;left:28.31px;top:515.66px" class="cls_006"><span class="cls_006">întâmplare? </span></div>
+            <div style="position:absolute;left:95.30px;top:515.66px" class="cls_005"><span class="cls_005">Povestește </span></div>
+            <div style="position:absolute;left:162.01px;top:515.66px" class="cls_006"><span class="cls_006">în 2-3 propoziții.</span></div>
+            <div style="position:absolute;left:419.50px;top:529.37px" class="cls_015"><span class="cls_015">- Ce rechizite ți-ai pre-</span></div>
+            <div style="position:absolute;left:28.35px;top:533.26px" class="cls_005"><span class="cls_005">6. Alege</span><span class="cls_028"> </span><span class="cls_006">varianta corectă pe baza textului și</span></div>
+            <div style="position:absolute;left:419.50px;top:540.17px" class="cls_015"><span class="cls_015">gătit pentru astăzi?</span></div>
+            <div style="position:absolute;left:28.34px;top:546.22px" class="cls_005"><span class="cls_005">transcrie</span><span class="cls_028"> </span><span class="cls_006">propozițiile în caiet.</span></div>
+            <div style="position:absolute;left:419.50px;top:555.77px" class="cls_015"><span class="cls_015">- Care este ora ta</span></div>
+            <div style="position:absolute;left:28.33px;top:563.50px" class="cls_006"><span class="cls_006">S-a sfârșit </span><span class="cls_069">vara</span><span class="cls_006"> / </span><span class="cls_069">toamna</span><span class="cls_006"> și vacanța. Copiii s-au</span></div>
+            <div style="position:absolute;left:419.49px;top:566.57px" class="cls_015"><span class="cls_015">preferată?</span></div>
+            <div style="position:absolute;left:28.32px;top:576.46px" class="cls_006"><span class="cls_006">adunat în </span><span class="cls_069">clasă</span><span class="cls_006"> / </span><span class="cls_069">curtea școlii</span><span class="cls_006">. Ei așteaptă</span></div>
+            <div style="position:absolute;left:419.49px;top:582.17px" class="cls_015"><span class="cls_015">- Ce faci în timpul</span></div>
+            <div style="position:absolute;left:28.30px;top:589.42px" class="cls_006"><span class="cls_006">nerăbdători pe </span><span class="cls_069">învățătoarea nouă</span><span class="cls_006"> / </span><span class="cls_069">colega nouă</span><span class="cls_006">.</span></div>
+            <div style="position:absolute;left:419.49px;top:592.98px" class="cls_015"><span class="cls_015">liber?</span></div>
+            <div style="position:absolute;left:28.29px;top:602.38px" class="cls_006"><span class="cls_006">Numele doamnei este </span><span class="cls_069">Maria Dinu</span><span class="cls_006"> / </span><span class="cls_069">Miruna</span></div>
+            <div style="position:absolute;left:28.28px;top:615.35px" class="cls_069"><span class="cls_069">Zamfir</span><span class="cls_006">. Băiețelul, Mihai Anghelescu, a stat în</span></div>
+            <div style="position:absolute;left:308.98px;top:620.97px" class="cls_005"><span class="cls_005">9. Muncă în perechi: Formulează </span><span class="cls_006">câte trei între-</span></div>
+            <div style="position:absolute;left:28.27px;top:628.31px" class="cls_069"><span class="cls_069">prima</span><span class="cls_006"> / </span><span class="cls_069">a doua</span><span class="cls_006"> bancă.</span></div>
+            <div style="position:absolute;left:308.97px;top:633.93px" class="cls_006"><span class="cls_006">bări colegului/ colegei de bancă. Apoi </span><span class="cls_005">inversați</span></div>
+            <div style="position:absolute;left:28.35px;top:647.55px" class="cls_005"><span class="cls_005">7. Continuă </span><span class="cls_006">propozițiile începute.</span></div>
+            <div style="position:absolute;left:308.97px;top:646.90px" class="cls_006"><span class="cls_006">rolurile</span></div>
+            <div style="position:absolute;left:28.35px;top:661.95px" class="cls_006"><span class="cls_006">La școală </span><span class="cls_069">citim</span><span class="cls_006">, ...</span></div>
+            <div style="position:absolute;left:308.97px;top:665.62px" class="cls_005"><span class="cls_005">10. Realizează </span><span class="cls_006">un bilet, adresat doamnei învă-</span></div>
+            <div style="position:absolute;left:28.35px;top:676.35px" class="cls_006"><span class="cls_006">În pauză, colegii de clasă </span><span class="cls_069">se joacă</span><span class="cls_006">, ...</span></div>
+            <div style="position:absolute;left:308.97px;top:678.58px" class="cls_006"><span class="cls_006">țătoare, în care îi mulțumești pentru semnul de</span></div>
+            <div style="position:absolute;left:28.35px;top:690.75px" class="cls_006"><span class="cls_006">Doamna învățătoare ne învață </span><span class="cls_069">să socotim</span><span class="cls_006">, ...</span></div>
+            <div style="position:absolute;left:308.97px;top:691.54px" class="cls_006"><span class="cls_006">carte primit de la ea în cadou în prima zi de</span></div>
+            <div style="position:absolute;left:18.81px;top:705.21px" class="cls_002"><span class="cls_002">18</span></div>
+            <div style="position:absolute;left:308.97px;top:704.50px" class="cls_006"><span class="cls_006">școală.</span></div>
+        </div>
+    </section>
+</section>
+</section>
+</div>
+
+<div id="set-5">
+<section class="nine-ten">
+<section class="page-nine">
+<!--    <div style="position:absolute;left:50%;margin-left:-290px;top:0px;width:581px;height:737px;border-style:outset;overflow:hidden">-->
+<div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+    <img src="images/background-09.jpg" width=581 height=737></div>
+    <div style="position:absolute;left:513.50px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+    <div style="position:absolute;left:376.21px;top:29.08px" class="cls_023"><span class="cls_023">Evaluare</span></div>
+<!--    <div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Evaluare</span></div>-->
+
+    <div style="position:absolute;left:510.20px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+    <div style="position:absolute;left:505.80px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+    <div style="position:absolute;left:128.62px;top:113.40px" class="cls_005"><span class="cls_005">1. Ascultă</span><span class="cls_006"> mesajul.</span></div>
+    <div style="position:absolute;left:235.25px;top:113.40px" class="cls_005"><span class="cls_005">Notează</span><span class="cls_006"> cu semnul X, în caseta</span></div>
+    <div style="position:absolute;left:120.61px;top:127.81px" class="cls_006"><span class="cls_006">potrivită, dacă este adevărat sau nu este adevărat enunțul.
+
+        <!-- Button trigger modal -->
+<a style="background: rgba(0,0,0,0.0); border-color: rgba(0,0,0,0.0);" type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPag19">
+</a></span></div>
+
+    <div style="position:absolute;left:136.98px;top:150.16px" class="cls_009"><span class="cls_009">Mihai are ghiozdan roșu.</span></div>
+    <div style="position:absolute;left:308.29px;top:150.16px" class="cls_009"><span class="cls_009">Copiii aduc lalele.</span></div>
+    <div style="position:absolute;left:184.34px;top:168.65px" class="cls_009"><span class="cls_009">DA</span></div>
+    <div style="position:absolute;left:234.44px;top:168.65px" class="cls_009"><span class="cls_009">NU</span></div>
+    <div style="position:absolute;left:377.46px;top:168.65px" class="cls_009"><span class="cls_009">DA</span></div>
+    <div style="position:absolute;left:427.56px;top:168.65px" class="cls_009"><span class="cls_009">NU</span></div>
+    <div style="position:absolute;left:137.28px;top:194.50px" class="cls_009"><span class="cls_009">Colegii de clasă sunt bucuroşi.</span></div>
+    <div style="position:absolute;left:317.70px;top:194.03px" class="cls_009"><span class="cls_009">DA</span></div>
+    <div style="position:absolute;left:367.80px;top:194.03px" class="cls_009"><span class="cls_009">NU</span></div>
+    <div style="position:absolute;left:52.60px;top:224.96px" class="cls_006"><span class="cls_006">2. Citește poezia!</span></div>
+    <div style="position:absolute;left:52.60px;top:244.35px" class="cls_010"><span class="cls_010">S-a sfârșit vacanța mare</span></div>
+    <div style="position:absolute;left:52.60px;top:259.74px" class="cls_007"><span class="cls_007">(fragment)</span></div>
+    <div style="position:absolute;left:94.24px;top:275.11px" class="cls_009"><span class="cls_009">de Emilia Plugaru</span></div>
+    <div style="position:absolute;left:52.88px;top:297.63px" class="cls_009"><span class="cls_009">Azi la școală-i sărbătoare -</span></div>
+    <div style="position:absolute;left:52.88px;top:312.03px" class="cls_009"><span class="cls_009">S-a sfârșit vacanța mare,</span></div>
+    <div style="position:absolute;left:52.88px;top:326.44px" class="cls_009"><span class="cls_009">Clopoțelul vesel sună,</span></div>
+    <div style="position:absolute;left:52.88px;top:340.84px" class="cls_009"><span class="cls_009">Toți elevii se adună.</span></div>
+    <div style="position:absolute;left:52.88px;top:369.64px" class="cls_009"><span class="cls_009">Vin la școală mari și mici</span></div>
+    <div style="position:absolute;left:52.88px;top:384.04px" class="cls_009"><span class="cls_009">Cu părinți și cu bunici,</span></div>
+    <div style="position:absolute;left:52.88px;top:398.44px" class="cls_009"><span class="cls_009">Iar acei mai mititei</span></div>
+    <div style="position:absolute;left:52.88px;top:412.85px" class="cls_009"><span class="cls_009">Tare-s dulci și frumușei!</span></div>
+    <div style="position:absolute;left:287.32px;top:433.64px" class="cls_011"><span class="cls_011">Cuvinte și expresii</span></div>
+    <div style="position:absolute;left:52.88px;top:441.65px" class="cls_009"><span class="cls_009">Vor să-nvețe dintr-o dată</span></div>
+    <div style="position:absolute;left:287.37px;top:450.52px" class="cls_012"><span class="cls_012">-i</span><span class="cls_013"> </span><span class="cls_014">- este</span></div>
+    <div style="position:absolute;left:358.87px;top:449.75px" class="cls_012"><span class="cls_012">-s</span><span class="cls_013"> </span><span class="cls_014">- sunt</span></div>
+    <div style="position:absolute;left:52.88px;top:456.05px" class="cls_009"><span class="cls_009">Să citească, să socoată...</span></div>
+    <div style="position:absolute;left:287.74px;top:467.05px" class="cls_012"><span class="cls_012">să socoată</span><span class="cls_013"> </span><span class="cls_014">- să socotească</span></div>
+    <div style="position:absolute;left:52.88px;top:470.45px" class="cls_009"><span class="cls_009">Și noi tot am fost ca ei</span></div>
+    <div style="position:absolute;left:52.88px;top:484.86px" class="cls_009"><span class="cls_009">Când eram mai mititei.</span></div>
+    <div style="position:absolute;left:52.60px;top:516.73px" class="cls_006"><span class="cls_006">3. Răspunde la întrebări!</span></div>
+    <div style="position:absolute;left:337.29px;top:515.78px" class="cls_015"><span class="cls_015">Unde?</span></div>
+    <div style="position:absolute;left:67.38px;top:537.12px" class="cls_015"><span class="cls_015">Care </span><span class="cls_009">este titlul poeziei?</span></div>
+    <div style="position:absolute;left:255.49px;top:541.26px" class="cls_015"><span class="cls_015">Care?</span></div>
+    <div style="position:absolute;left:387.84px;top:546.84px" class="cls_015"><span class="cls_015">Cine?</span></div>
+    <div style="position:absolute;left:67.38px;top:551.52px" class="cls_015"><span class="cls_015">Cine </span><span class="cls_009">este autorul poeziei?</span></div>
+    <div style="position:absolute;left:67.38px;top:565.92px" class="cls_015"><span class="cls_015">Ce </span><span class="cls_009">s-a sfârșit?</span></div>
+    <div style="position:absolute;left:67.38px;top:580.32px" class="cls_015"><span class="cls_015">Unde </span><span class="cls_009">merg copiii?</span></div>
+    <div style="position:absolute;left:279.92px;top:584.10px" class="cls_015"><span class="cls_015">Ce?</span></div>
+    <div style="position:absolute;left:52.60px;top:612.43px" class="cls_011"><span class="cls_011">4. Denumește</span><span class="cls_016"> litera variantei corecte.</span></div>
+
+<!--    Font issues-->
+    <div style="position:absolute;left:52.88px;top:630.45px" class="cls_017"><span class="cls_017">Elevii sosesc cu</span></div>
+    <div style="position:absolute;left:187.88px;top:630.45px" class="cls_017"><span class="cls_017">Ei vor să învețe</span></div>
+    <div style="position:absolute;left:340.13px;top:630.45px" class="cls_017"><span class="cls_017">Prima zi de școală este</span></div>
+    <div style="position:absolute;left:56.52px;top:649.37px" class="cls_018"><span class="cls_018">a</span></div>
+    <div style="position:absolute;left:69.19px;top:647.93px" class="cls_013"><span class="cls_013">părinți și bunici</span></div>
+    <div style="position:absolute;left:190.20px;top:649.37px" class="cls_018"><span class="cls_018">a</span></div>
+    <div style="position:absolute;left:201.44px;top:647.93px" class="cls_013"><span class="cls_013">să joace fotbal</span></div>
+    <div style="position:absolute;left:342.91px;top:649.37px" class="cls_018"><span class="cls_018">a</span></div>
+    <div style="position:absolute;left:353.69px;top:647.93px" class="cls_013"><span class="cls_013">o întâlnire</span></div>
+    <div style="position:absolute;left:56.67px;top:664.04px" class="cls_018"><span class="cls_018">b</span></div>
+    <div style="position:absolute;left:69.19px;top:662.58px" class="cls_013"><span class="cls_013">prieteni</span></div>
+    <div style="position:absolute;left:190.35px;top:664.04px" class="cls_018"><span class="cls_018">b</span></div>
+    <div style="position:absolute;left:201.44px;top:662.58px" class="cls_013"><span class="cls_013" style="font-size: 10.7px;">să citească, să socotească</span></div>
+    <div style="position:absolute;left:343.06px;top:664.04px" class="cls_018"><span class="cls_018">b</span></div>
+    <div style="position:absolute;left:353.69px;top:662.58px" class="cls_013"><span class="cls_013">un interviu</span></div>W
+    <div style="position:absolute;left:56.67px;top:676.90px" class="cls_018"><span class="cls_018">c</span></div>
+    <div style="position:absolute;left:69.19px;top:677.22px" class="cls_013"><span class="cls_013">animale domes  ce</span></div>
+    <div style="position:absolute;left:190.35px;top:676.90px" class="cls_018"><span class="cls_018">c</span></div>
+    <div style="position:absolute;left:201.44px;top:677.22px" class="cls_013"><span class="cls_013">să danseze</span></div>
+    <div style="position:absolute;left:343.06px;top:676.90px" class="cls_018"><span class="cls_018">c</span></div>
+    <div style="position:absolute;left:353.69px;top:677.22px" class="cls_013"><span class="cls_013" style="font-size: 11.5px;">o sărbătoare adevărată</span></div>
+    <div style="position:absolute;left:549.94px;top:705.21px" class="cls_002"><span class="cls_002">19</span></div>
+
+</div>
+</section>
+
+    <section class="page-ten">
+        <div style="position:relative;width:581px;height:737px;border-style:outset;overflow:hidden">
+            <div style="position:absolute;left:0px;top:0px">
+                <img src="images/background-10.jpg" width=581 height=737></div>
+            <div style="position:absolute;left:40.43px;top:11.04px" class="cls_003"><span class="cls_003">1</span></div>
+            <div style="position:absolute;left:115.57px;top:29.08px" class="cls_023"><span class="cls_023">Evaluare</span></div>
+            <div style="position:absolute;left:37.13px;top:49.86px" class="cls_004"><span class="cls_004">Unitatea</span></div>
+            <div style="position:absolute;left:32.73px;top:59.05px" class="cls_004"><span class="cls_004">de învăţare</span></div>
+            <div style="position:absolute;left:118.91px;top:90.81px" class="cls_005"><span class="cls_005">5. Înlocuiește </span><span class="cls_028">cuvintele subliniate cu cuvintele corespunzătoare din poezie.</span></div>
+            <div style="position:absolute;left:123.91px;top:113.76px" class="cls_006"><span class="cls_006">Clopoțelul sună </span><span class="cls_069">bucuros</span><span class="cls_006">. Sosesc copiii mari și </span><span class="cls_069">micuți</span><span class="cls_006">. Ei sunt tare </span><span class="cls_069">drăguți</span><span class="cls_006"> și frumușei.</span></div>
+            <div style="position:absolute;left:128.91px;top:142.57px" class="cls_005"><span class="cls_005">6. Completează </span><span class="cls_028">propozițiile în caiet.</span></div>
+            <div style="position:absolute;left:140.28px;top:163.71px" class="cls_006"><span class="cls_006">În vacanța de vară</span></div>
+            <div style="position:absolute;left:372.18px;top:163.71px" class="cls_006"><span class="cls_006">La școală</span></div>
+            <div style="position:absolute;left:140.28px;top:183.87px" class="cls_006"><span class="cls_006">Cu colegii de clasă</span></div>
+            <div style="position:absolute;left:372.18px;top:183.87px" class="cls_006"><span class="cls_006">Doamna învățătoare</span></div>
+            <div style="position:absolute;left:118.44px;top:216.67px" class="cls_005"><span class="cls_005">7. Descoperă</span><span class="cls_028"> ce nu se potrivește în</span></div>
+            <div style="position:absolute;left:118.43px;top:231.07px" class="cls_028"><span class="cls_028">ghiozdanul unui elev ordonat.</span></div>
+            <div style="position:absolute;left:118.42px;top:249.79px" class="cls_005"><span class="cls_005">Scrie </span><span class="cls_028">numele rechizitelor școlare în</span></div>
+            <div style="position:absolute;left:118.41px;top:264.20px" class="cls_028"><span class="cls_028">ordine alfabetică.</span></div>
+            <div style="position:absolute;left:118.44px;top:326.38px" class="cls_005"><span class="cls_005">8. Transcrie </span><span class="cls_028">propozițiile și </span><span class="cls_005">pune </span><span class="cls_028">semnele potrivite la sfârșitul lor.</span></div>
+            <div style="position:absolute;left:138.60px;top:347.71px" class="cls_006"><span class="cls_006">S-a terminat vacanța mare</span></div>
+            <div style="position:absolute;left:350.73px;top:348.14px" class="cls_006"><span class="cls_006">Ce bine că începe școala</span></div>
+            <div style="position:absolute;left:138.60px;top:365.34px" class="cls_006"><span class="cls_006">Vii la școală</span></div>
+            <div style="position:absolute;left:350.73px;top:365.77px" class="cls_006"><span class="cls_006">Bine ați revenit la școală</span></div>
+            <div style="position:absolute;left:138.60px;top:382.97px" class="cls_006"><span class="cls_006">Unde ai fost în vacanță</span></div>
+            <div style="position:absolute;left:118.44px;top:413.98px" class="cls_005"><span class="cls_005">9. Ordonează </span><span class="cls_028">părțile biletului și</span></div>
+            <div style="position:absolute;left:337.36px;top:411.68px" class="cls_062"><span class="cls_062">AUTOEVALUARE</span></div>
+            <div style="position:absolute;left:118.43px;top:428.38px" class="cls_005"><span class="cls_005">transcrie </span><span class="cls_028">biletul în caiet.</span></div>
+            <div style="position:absolute;left:335.17px;top:445.55px" class="cls_063"><span class="cls_063">Mai citesc o dată să verific dacă pot</span></div>
+            <div style="position:absolute;left:145.45px;top:449.23px" class="cls_058"><span class="cls_058">Vom avea un meci de la ora 16.00</span></div>
+            <div style="position:absolute;left:335.17px;top:456.54px" class="cls_063"><span class="cls_063">să răspund cu </span><span class="cls_064">DA</span><span class="cls_063"> sau cu </span><span class="cls_064">NU</span><span class="cls_063">.</span></div>
+            <div style="position:absolute;left:177.08px;top:461.62px" class="cls_058"><span class="cls_058">până la ora 17.00.</span></div>
+            <div style="position:absolute;left:172.84px;top:478.89px" class="cls_058"><span class="cls_058">Te aștept,</span></div>
+            <div style="position:absolute;left:349.41px;top:480.05px" class="cls_059"><span class="cls_059">Am scris corect cuvintele?</span></div>
+            <div style="position:absolute;left:238.97px;top:490.04px" class="cls_058"><span class="cls_058">Alex</span></div>
+            <div style="position:absolute;left:349.41px;top:495.92px" class="cls_059"><span class="cls_059">Am formulat propoziții clare?</span></div>
+            <div style="position:absolute;left:150.83px;top:508.63px" class="cls_058"><span class="cls_058">Vino mâine la terenul de fotbal.</span></div>
+            <div style="position:absolute;left:349.41px;top:511.79px" class="cls_059"><span class="cls_059">Am început propozițiile cu literă mare?</span></div>
+            <div style="position:absolute;left:349.40px;top:527.66px" class="cls_059"><span class="cls_059">Am folosit corect semnele la sfârșitul propozițiilor?</span></div>
+            <div style="position:absolute;left:159.55px;top:529.43px" class="cls_058"><span class="cls_058">Dragul meu prieten, Mihai</span></div>
+            <div style="position:absolute;left:349.40px;top:543.53px" class="cls_059"><span class="cls_059">Am despărțit corect cuvintele la sfârșit de rând?</span></div>
+            <div style="position:absolute;left:118.44px;top:566.49px" class="cls_028"><span class="cls_028">10. Formulează cinci enunțuri în</span></div>
+            <div style="position:absolute;left:335.18px;top:574.57px" class="cls_064"><span class="cls_064">Exprimă</span><span class="cls_063">-ți părerea despre munca ta.</span></div>
+            <div style="position:absolute;left:118.43px;top:580.89px" class="cls_028"><span class="cls_028">care te prezinți unui coleg nou. Te</span></div>
+            <div style="position:absolute;left:335.18px;top:585.84px" class="cls_064"><span class="cls_064">Colorează</span><span class="cls_063"> cercurile potrivite.</span></div>
+            <div style="position:absolute;left:118.42px;top:595.29px" class="cls_028"><span class="cls_028">ajută întrebările.</span></div>
+            <div style="position:absolute;left:335.14px;top:605.38px" class="cls_059"><span class="cls_059">La acest test am lucrat:</span></div>
+            <div style="position:absolute;left:136.96px;top:622.65px" class="cls_027"><span class="cls_027">• Cum </span><span class="cls_024">te numești?</span></div>
+            <div style="position:absolute;left:334.99px;top:625.99px" class="cls_059"><span class="cls_059">Cred că voi obține califica  vul:</span></div>
+            <div style="position:absolute;left:136.96px;top:640.06px" class="cls_027"><span class="cls_027">• Unde </span><span class="cls_024">locuiești?</span></div>
+            <div style="position:absolute;left:336.60px;top:641.07px" class="cls_065"><span class="cls_065">○</span><span class="cls_066"> Foarte bine</span></div>
+            <div style="position:absolute;left:401.62px;top:641.07px" class="cls_065"><span class="cls_065">○</span><span class="cls_066"> Bine</span></div>
+            <div style="position:absolute;left:437.47px;top:641.07px" class="cls_065"><span class="cls_065">○</span><span class="cls_066"> Suficient</span></div>
+            <div style="position:absolute;left:493.36px;top:641.07px" class="cls_065"><span class="cls_065">○</span><span class="cls_066"> Insuficient</span></div>
+            <div style="position:absolute;left:136.95px;top:657.48px" class="cls_027"><span class="cls_027">• </span><span class="cls_024">Ai frați?</span></div>
+            <div style="position:absolute;left:334.71px;top:666.99px" class="cls_060"><span class="cls_060">RECOMANDARE:</span></div>
+            <div style="position:absolute;left:481.43px;top:671.09px" class="cls_068"><span class="cls_068">FB:</span></div>
+            <div style="position:absolute;left:136.95px;top:674.89px" class="cls_027"><span class="cls_027">• Care</span><span class="cls_024"> este ora ta preferată?</span></div>
+            <div style="position:absolute;left:335.30px;top:681.24px" class="cls_061"><span class="cls_061">Evaluarea se face pe baza</span></div>
+            <div style="position:absolute;left:486.75px;top:684.16px" class="cls_068"><span class="cls_068">B:</span></div>
+            <div style="position:absolute;left:335.30px;top:691.13px" class="cls_061"><span class="cls_061">evaluărilor parțiale (pe exerciții).</span></div>
+            <div style="position:absolute;left:136.95px;top:692.30px" class="cls_027"><span class="cls_027">• Ce </span><span class="cls_024">faci în timpul liber?</span></div>
+            <div style="position:absolute;left:335.30px;top:701.02px" class="cls_061"><span class="cls_061">Ponderea acestor califica  ve obținute</span></div>
+            <div style="position:absolute;left:487.76px;top:697.23px" class="cls_068"><span class="cls_068">S:</span></div>
+            <div style="position:absolute;left:19.54px;top:705.23px" class="cls_002"><span class="cls_002">20</span></div>
+            <div style="position:absolute;left:335.30px;top:710.90px" class="cls_061"><span class="cls_061">hotărăște califica  vul final.</span></div>
+            <div style="position:absolute;left:490.15px;top:710.30px" class="cls_068"><span class="cls_068">I:</span></div>
+        </div>
+    </section>
+</section>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item-left">
+            <a class="page-link">
+                <i class="fa fa-chevron-left" style="background-image: url('CSS/sageata-inapoi-v2.png');"></i>
+            </a>
+        </li>
+        <li class="page-item-right">
+            <a class="page-link">
+                <i class="fa fa-chevron-right" style="background-image: url('CSS/sageata-inainte-v2.png');"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+</main>
+
+
+<!--Pag. 16 Options exercitiu-->
+<script>
+    // Get all answer options by their class names
+    const options1 = document.querySelectorAll(".options-1");
+    const options2 = document.querySelectorAll(".options-2");
+    const options3 = document.querySelectorAll(".options-3");
+    const options4 = document.querySelectorAll(".options-4");
+
+    // Add event listeners to each option
+    options1.forEach(option => option.addEventListener("click", selectOption));
+    options2.forEach(option => option.addEventListener("click", selectOption));
+    options3.forEach(option => option.addEventListener("click", selectOption));
+    options4.forEach(option => option.addEventListener("click", selectOption));
+
+    // Function to select an option
+    function selectOption(event) {
+
+        const isCorrect = this.classList[1];
+
+        // Remove the other checks for this set if necessary:
+        const clickedOptionsSet = this.className
+
+        let allOptions = document.querySelectorAll(`.${clickedOptionsSet}`);
+
+        if (isCorrect === 'incorrect')
+        {
+            // Remove "selected-option" class from all options
+            allOptions.forEach(option => option.classList.remove());
+
+            // Add "selected-option" class only to the clicked option
+            event.target.classList.add("selected-option-incorrect");
+
+            // alert('Incorect, dar e ok! Mai gandeste-te!');
+        } else if (isCorrect === 'correct') {
+
+            // Remove "selected-option" class from all options
+            allOptions.forEach(option => option.classList.remove());
+
+            // Add "selected-option" class only to the clicked option
+            event.target.classList.add("selected-option-correct");
+
+            // alert('Correct! Bravo!');
+        }
+    }
+</script>
+
+<!--Full screen-->
+<script>
+    function toggleAccordion() {
+        let accordion = document.querySelector('#accordion');
+        if (accordion.classList.contains('closed')) {
+            accordion.classList.remove('closed');
+            accordion.classList.add('open');
+        } else {
+            accordion.classList.remove('open');
+            accordion.classList.add('closed');
+        }
+    }
+
+    function toggleFullScreen() {
+        var elem = document.getElementById("fullscreen-demo");
+        var sidebar = document.getElementById("sidebar");
+        var mainContent = document.getElementById("main-content");
+
+        if (!document.fullscreenElement &&    // alternative standard method
+            !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+
+            // Add the fullscreen class to hide the sidebar and change the main content margin
+            elem.classList.add("fullscreen");
+
+            document.body.style.zoom = "125%";
+
+
+            mainContent.style.marginLeft = "0";
+        }
+        else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+
+            // Remove the fullscreen class to show the sidebar and reset the main content margin
+            elem.classList.remove("fullscreen");
+            document.body.style.zoom = "110%";
+            mainContent.style.marginLeft = "200px";
+        }
+    }
+</script>
+
+<script>
+
+    let currentSet = 1;
+    const totalSets = 5;
+
+
+    const leftArrow = document.querySelector('.fa-chevron-left');
+    const rightArrow = document.querySelector('.fa-chevron-right');
+
+    // Show first set of pages
+    showSet(currentSet);
+
+    // Add event listeners to the arrow buttons
+    leftArrow.addEventListener('click', function() {
+        if (currentSet > 1) {
+            currentSet--;
+            showSet(currentSet);
+        }
+    });
+
+    rightArrow.addEventListener('click', function() {
+        if (currentSet < totalSets) {
+            currentSet++;
+            showSet(currentSet);
+        }
+    });
+
+    function showSet(setNumber) {
+        // Loop through all set containers and hide/show them based on the current set number
+        currentSet = setNumber;
+        for (let i = 1; i <= totalSets; i++) {
+            const setContainer = document.querySelector(`#set-${i}`);
+            if (i === setNumber) {
+                setContainer.style.display = 'block';
+            } else {
+                setContainer.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+<!--Arrows si paginatie-->
+<script>
+    document.addEventListener('DOMContentLoaded', function()
+    {
+        // seteaza zoom potrivit
+        document.body.style.zoom = "110%";
+
+        let currentPage = 1;
+        const totalPages = 5;
+
+        // Get references to the arrow buttons
+        let leftArrow = document.querySelector('.page-item-left');
+        let rightArrow = document.querySelector('.page-item-right');
+
+        showPage(currentPage);
+        updateArrows();
+
+        leftArrow.addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updateArrows();
+            }
+        });
+
+        rightArrow.addEventListener('click', function () {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updateArrows();
+            }
+        });
+
+        function showPage(pageNumber) {
+            // Loop through all page containers and hide/show them based on the current page number
+            for (let i = 1; i <= totalPages; i++) {
+                const pageContainer = document.querySelector(`#page-${i}`);
+                if (i === pageNumber) {
+                    pageContainer.style.display = 'block';
+                } else {
+                    pageContainer.style.display = 'none';
+                }
+            }
+        }
+
+        function updateArrows() {
+            if (currentPage === 1) {
+                leftArrow.style.display = 'none';
+            } else {
+                leftArrow.classList.remove('disabled');
+                leftArrow.style.display = 'inline-block';
+            }
+
+            if (currentPage === totalPages) {
+                rightArrow.classList.add('disabled');
+                rightArrow.style.display = 'none';
+            } else {
+                rightArrow.classList.remove('disabled');
+                rightArrow.style.display = 'inline-block';
+            }
+        }
+    });
+</script>
+
+<!--acordeon Cuprins -->
+<div id="accordion" class="accordion closed">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h3>
+                Cuprins
+            </h3>
+            <hr/>
+            <div>
+                <button type="button" class="btn btn-secondary" onclick="toggleAccordion()">Inchide</button>
+            </div>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <h6 style="cursor: pointer;" onclick="showSet(1)">"Primul Clopotel" - Pag. 11-12;</h6>
+            </div>
+            <hr/>
+            <div class="card-body">
+                <h6 style="cursor: pointer;" onclick="showSet(2)">"Nuca ciudata" - Pag. 13-14;</h6>
+            </div>
+            <hr/>
+            <div class="card-body">
+                <h6 style="cursor: pointer;" onclick="showSet(3)">"Scoala vesela din padure" - Pag. 15-16;</h6>
+            </div>
+            <hr/>
+            <div class="card-body">
+                <h6 style="cursor: pointer;" onclick="showSet(4)">"Recapitulare" - Pag. 17-18;</h6>
+            </div>
+            <hr/>
+            <div class="card-body">
+                <h6 style="cursor: pointer;" onclick="showSet(5)">"Evaluare" - Pag. 19-20;</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ajutor/Help -->
+<div class="modal fade" id="modalAjutor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Instructiuni utilizare</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    <div>
+                        <img src="CSS/ecran-completIcon.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Apasarea acestei iconita pune e-book-ul in modul de "ecran complet". Pentru a iesii din acesta in mod optim
+                        doar apasati din nou pe dansa. Atentie! Apasarea pe poze/pornirea de video-uri sau materiale audio nu este
+                        optimizata pentru ecran complet!
+                    </div>
+
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/helpIcon.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Dupa cum vedeti, prin apasarea acestei iconite aveti access la informatii suplimentare pentru o utilizare mai
+                        usoara a acestui e-book.
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/cuprinsIcon.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Aici aveti access la cuprins e-book-ul-ui, prin apasarea oricarei pagini/capitol sunteti redirectionati catre
+                        aceasta.
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/sageata-inainte-v2.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= 'Sageata dreapta' este folosita pentru a da pagina in partea dreapta. In cazul in care
+                        pagina nu se schimba sau sageata nu mai apare inseamna ca nu mai este nicio pagina disponibila in aceea directie.
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/sageata-inapoi-v2.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= 'Sageata stanga' este folosita pentru a da pagina in partea stanga. In cazul in care
+                        pagina nu se schimba sau sageata nu mai apare inseamna ca nu mai este nicio pagina disponibila in aceea directie.
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/iconitaVideo.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Apasati aceasta iconita pentru a porni video explicativ al exercitiului.
+                        (Vedeti exemplul pag. 14 ex. 2).
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/iconitaAudio.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Apasati aceasta iconita pentru a porni audio explicativ al exercitiului.
+                        (Vedeti exemplul pag. 11 ex. 2/ pag. 17 ex. 5 / pag. 19 ex. 1).
+                    </div>
+
+                    <hr/>
+
+                    <div style="margin-top: 20px;">
+                        <img src="CSS/iconitaZoom.png" style="width: 40px; height: 40px;" alt="Full screen icon">
+                        <= Apasati aceasta iconita pentru a marii imaginea. (Vedeti exemplul pag. 14 imaginea dreapta-sus
+                        si pag. 16 imaginea stanga-sus).
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!--Modal pag. 11 audio - exercitiu broscuta -->
+<!-- Modal -->
+<div class="modal fade" id="modalPag11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <audio controls>
+                    <source src="assets/P11-AMI-Audio.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal pag. 14 video - exercitiu nuci -->
+<!-- Modal -->
+<div class="modal fade" id="modalPag14" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center align-items-center">
+                <video width="100%" height="100%" controls style="max-width: 800px;">
+                    <source src="assets/P14-AMI-Video-Ex-2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Aici ai exemplul de modal pentru poza (stiu ca e putin blurata, e din cauza ca ii marim width si height prea mult, insa ar trebui sa fie ok pt -->
+<!--acest demo )-->
+<!--Modal pag. 14 poza -->
+<!-- Modal -->
+<div class="modal fade" id="modalPozaPag14" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center align-items-center">
+                <img src="CSS/pozaZoomPag14.jpg" id="pozaPag14" style="height: auto;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal pag. 16 poza -->
+<!-- Modal -->
+<div class="modal fade" id="modalPozaPag16" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center align-items-center">
+                <img src="CSS/pozaZoomPag16.jpg" id="pozaPag16" style="height: auto;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal pag. 17 audio - exerciitiu broscuta -->
+<!-- Modal -->
+<div class="modal fade" id="modalPag17" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <audio controls>
+                    <source src="assets/P17-AMI-Audio-Ex-5.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal pag. 19 audio - exerciitiu broscuta -->
+<!-- Modal -->
+<div class="modal fade" id="modalPag19" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <audio controls>
+                    <source src="assets/P19-AMI-Audio-Ex1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
